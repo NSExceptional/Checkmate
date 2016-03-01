@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FLEX.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MirrorKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Objc-Foundation-Extensions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Objc-iOS-Extensions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5B46EC1FB1929BC978E258705AF915FE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>69E813215574E0B3D52C4BE036E59635</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A76BD81788ECC9DCDD751B4DFD69F10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9BCC98102CC8F6BE993B9F6D7E9BBC60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B6BA29E1AF9731F146C8CCDAE6E15562</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

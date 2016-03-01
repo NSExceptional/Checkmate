@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18238DB05ABD28C9841BAE85 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2DEFB7324FBE7645136A80 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B428B4F71C82A357000E5569 /* CHTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B428B4F61C82A357000E5569 /* CHTimerView.m */; };
+		B44ADEE01C7D411C0038FBA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEDF1C7D411C0038FBA7 /* main.m */; };
+		B44ADEE31C7D411C0038FBA7 /* CHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */; };
+		B44ADEF11C7D411C0038FBA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44ADEF01C7D411C0038FBA7 /* Assets.xcassets */; };
+		B44ADEFD1C7D42F10038FBA7 /* CHPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */; };
+		B44ADF001C7D43010038FBA7 /* CHTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEFF1C7D43010038FBA7 /* CHTimerViewController.m */; };
+		B44ADF031C7D43150038FBA7 /* CHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */; };
+		B44ADF0A1C7D59840038FBA7 /* CHPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF091C7D59840038FBA7 /* CHPickerCell.m */; };
+		B44ADF0E1C7D5DD50038FBA7 /* Checkmate-Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF0D1C7D5DD50038FBA7 /* Checkmate-Constants.m */; };
+		B44ADF101C7D5F0A0038FBA7 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B44ADF0F1C7D5F0A0038FBA7 /* Defaults.plist */; };
+		B44ADF131C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */; };
+		B4AE61BD1C8574D0004BB75A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AE61BC1C8574D0004BB75A /* Launch.xib */; };
+		B4ED77C21C8560CB00CCC231 /* CHTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */; };
+		B4EEBA9E1C8266D800B414AC /* CHTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		026F00CD1B54EE82A0BE1390 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		57F683942F569A9B02C5EB90 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B428B4F51C82A357000E5569 /* CHTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerView.h; sourceTree = "<group>"; };
+		B428B4F61C82A357000E5569 /* CHTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerView.m; sourceTree = "<group>"; };
+		B44ADEDB1C7D411C0038FBA7 /* Checkmate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkmate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44ADEDF1C7D411C0038FBA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B44ADEE11C7D411C0038FBA7 /* CHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAppDelegate.h; sourceTree = "<group>"; };
+		B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAppDelegate.m; sourceTree = "<group>"; };
+		B44ADEF01C7D411C0038FBA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B44ADEF51C7D411C0038FBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44ADEFB1C7D42F10038FBA7 /* CHPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPageViewController.h; sourceTree = "<group>"; };
+		B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPageViewController.m; sourceTree = "<group>"; };
+		B44ADEFE1C7D43010038FBA7 /* CHTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerViewController.h; sourceTree = "<group>"; };
+		B44ADEFF1C7D43010038FBA7 /* CHTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerViewController.m; sourceTree = "<group>"; };
+		B44ADF011C7D43150038FBA7 /* CHSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSettingsViewController.h; sourceTree = "<group>"; };
+		B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSettingsViewController.m; sourceTree = "<group>"; };
+		B44ADF081C7D59840038FBA7 /* CHPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPickerCell.h; sourceTree = "<group>"; };
+		B44ADF091C7D59840038FBA7 /* CHPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPickerCell.m; sourceTree = "<group>"; };
+		B44ADF0B1C7D5DC20038FBA7 /* Checkmate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Checkmate-Prefix.pch"; sourceTree = "<group>"; };
+		B44ADF0C1C7D5DD50038FBA7 /* Checkmate-Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Checkmate-Constants.h"; sourceTree = "<group>"; };
+		B44ADF0D1C7D5DD50038FBA7 /* Checkmate-Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Checkmate-Constants.m"; sourceTree = "<group>"; };
+		B44ADF0F1C7D5F0A0038FBA7 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		B44ADF111C7D74F70038FBA7 /* UIPickerView+SeparatorLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+SeparatorLines.h"; sourceTree = "<group>"; };
+		B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+SeparatorLines.m"; sourceTree = "<group>"; };
+		B4AE61BC1C8574D0004BB75A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
+		B4ED77C01C8560CB00CCC231 /* CHTimeIntervalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimeIntervalPicker.h; sourceTree = "<group>"; };
+		B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimeIntervalPicker.m; sourceTree = "<group>"; };
+		B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerLabel.h; sourceTree = "<group>"; };
+		B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerLabel.m; sourceTree = "<group>"; };
+		DB2DEFB7324FBE7645136A80 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B44ADED81C7D411C0038FBA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18238DB05ABD28C9841BAE85 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FD6ABD0296A21AFE042790A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB2DEFB7324FBE7645136A80 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B44ADED21C7D411C0038FBA7 = {
+			isa = PBXGroup;
+			children = (
+				B44ADEDD1C7D411C0038FBA7 /* Checkmate */,
+				B44ADEDC1C7D411C0038FBA7 /* Products */,
+				F3020DC585BAE4312D27447D /* Pods */,
+				0FD6ABD0296A21AFE042790A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B44ADEDC1C7D411C0038FBA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B44ADEDB1C7D411C0038FBA7 /* Checkmate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B44ADEDD1C7D411C0038FBA7 /* Checkmate */ = {
+			isa = PBXGroup;
+			children = (
+				B44ADEE11C7D411C0038FBA7 /* CHAppDelegate.h */,
+				B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */,
+				B44ADEFB1C7D42F10038FBA7 /* CHPageViewController.h */,
+				B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */,
+				B44ADEFE1C7D43010038FBA7 /* CHTimerViewController.h */,
+				B44ADEFF1C7D43010038FBA7 /* CHTimerViewController.m */,
+				B428B4F51C82A357000E5569 /* CHTimerView.h */,
+				B428B4F61C82A357000E5569 /* CHTimerView.m */,
+				B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */,
+				B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */,
+				B44ADF011C7D43150038FBA7 /* CHSettingsViewController.h */,
+				B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */,
+				B44ADF081C7D59840038FBA7 /* CHPickerCell.h */,
+				B44ADF091C7D59840038FBA7 /* CHPickerCell.m */,
+				B44ADF111C7D74F70038FBA7 /* UIPickerView+SeparatorLines.h */,
+				B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */,
+				B4ED77C01C8560CB00CCC231 /* CHTimeIntervalPicker.h */,
+				B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */,
+				B44ADEDE1C7D411C0038FBA7 /* Supporting Files */,
+			);
+			path = Checkmate;
+			sourceTree = "<group>";
+		};
+		B44ADEDE1C7D411C0038FBA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B44ADEF01C7D411C0038FBA7 /* Assets.xcassets */,
+				B44ADEF51C7D411C0038FBA7 /* Info.plist */,
+				B44ADF0F1C7D5F0A0038FBA7 /* Defaults.plist */,
+				B44ADEDF1C7D411C0038FBA7 /* main.m */,
+				B44ADF0B1C7D5DC20038FBA7 /* Checkmate-Prefix.pch */,
+				B44ADF0C1C7D5DD50038FBA7 /* Checkmate-Constants.h */,
+				B44ADF0D1C7D5DD50038FBA7 /* Checkmate-Constants.m */,
+				B4AE61BC1C8574D0004BB75A /* Launch.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F3020DC585BAE4312D27447D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				026F00CD1B54EE82A0BE1390 /* Pods.debug.xcconfig */,
+				57F683942F569A9B02C5EB90 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B44ADEDA1C7D411C0038FBA7 /* Checkmate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B44ADEF81C7D411C0038FBA7 /* Build configuration list for PBXNativeTarget "Checkmate" */;
+			buildPhases = (
+				1E590336D627253682AF5F1A /* Check Pods Manifest.lock */,
+				B44ADED71C7D411C0038FBA7 /* Sources */,
+				B44ADED81C7D411C0038FBA7 /* Frameworks */,
+				B44ADED91C7D411C0038FBA7 /* Resources */,
+				4338EC2E8B53D63011F61792 /* Copy Pods Resources */,
+				4170D185C0DC4674E4126EB2 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Checkmate;
+			productName = Checkmate;
+			productReference = B44ADEDB1C7D411C0038FBA7 /* Checkmate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B44ADED31C7D411C0038FBA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CH;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Tanner Bennett";
+				TargetAttributes = {
+					B44ADEDA1C7D411C0038FBA7 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = S6N2F22V2Z;
+					};
+				};
+			};
+			buildConfigurationList = B44ADED61C7D411C0038FBA7 /* Build configuration list for PBXProject "Checkmate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B44ADED21C7D411C0038FBA7;
+			productRefGroup = B44ADEDC1C7D411C0038FBA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B44ADEDA1C7D411C0038FBA7 /* Checkmate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B44ADED91C7D411C0038FBA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44ADEF11C7D411C0038FBA7 /* Assets.xcassets in Resources */,
+				B44ADF101C7D5F0A0038FBA7 /* Defaults.plist in Resources */,
+				B4AE61BD1C8574D0004BB75A /* Launch.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E590336D627253682AF5F1A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4170D185C0DC4674E4126EB2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4338EC2E8B53D63011F61792 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B44ADED71C7D411C0038FBA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44ADF031C7D43150038FBA7 /* CHSettingsViewController.m in Sources */,
+				B4EEBA9E1C8266D800B414AC /* CHTimerLabel.m in Sources */,
+				B44ADF0A1C7D59840038FBA7 /* CHPickerCell.m in Sources */,
+				B44ADEE31C7D411C0038FBA7 /* CHAppDelegate.m in Sources */,
+				B4ED77C21C8560CB00CCC231 /* CHTimeIntervalPicker.m in Sources */,
+				B44ADEE01C7D411C0038FBA7 /* main.m in Sources */,
+				B44ADEFD1C7D42F10038FBA7 /* CHPageViewController.m in Sources */,
+				B44ADF131C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m in Sources */,
+				B428B4F71C82A357000E5569 /* CHTimerView.m in Sources */,
+				B44ADF001C7D43010038FBA7 /* CHTimerViewController.m in Sources */,
+				B44ADF0E1C7D5DD50038FBA7 /* Checkmate-Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B44ADEF61C7D411C0038FBA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "Checkmate/Checkmate-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B44ADEF71C7D411C0038FBA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Checkmate/Checkmate-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B44ADEF91C7D411C0038FBA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 026F00CD1B54EE82A0BE1390 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Checkmate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pantsthief.Checkmate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B44ADEFA1C7D411C0038FBA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57F683942F569A9B02C5EB90 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Checkmate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pantsthief.Checkmate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B44ADED61C7D411C0038FBA7 /* Build configuration list for PBXProject "Checkmate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44ADEF61C7D411C0038FBA7 /* Debug */,
+				B44ADEF71C7D411C0038FBA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B44ADEF81C7D411C0038FBA7 /* Build configuration list for PBXNativeTarget "Checkmate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44ADEF91C7D411C0038FBA7 /* Debug */,
+				B44ADEFA1C7D411C0038FBA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B44ADED31C7D411C0038FBA7 /* Project object */;
+}

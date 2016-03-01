@@ -1,0 +1,19 @@
+PODS:
+  - FLEX (2.2.0)
+  - MirrorKit (1.0.1)
+  - Objc-Foundation-Extensions (0.1.0)
+  - Objc-iOS-Extensions (0.1.0):
+    - Objc-Foundation-Extensions
+
+DEPENDENCIES:
+  - FLEX
+  - MirrorKit
+  - Objc-iOS-Extensions
+
+SPEC CHECKSUMS:
+  FLEX: bc8a4fb887ed5d3cdf7c2f3bd665f7bb1647cc58
+  MirrorKit: b858a0185d5050c1bfca37198c00acfadce2df5e
+  Objc-Foundation-Extensions: 0e24d6a4b986d2398305f6b382c1031093f3ee5c
+  Objc-iOS-Extensions: 2bec624d0576658fc751bbe260a111ae7e95eb76
+
+COCOAPODS: 0.38.0
