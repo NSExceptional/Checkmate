@@ -164,6 +164,7 @@
     _timer         = nil;
     _referenceDate = nil;
     _timeSpent     = 0;
+    self.textColor = [UIColor whiteColor];
     
     [self displayTime:self.totalTime];
 }
