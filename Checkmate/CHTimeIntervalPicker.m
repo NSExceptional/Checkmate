@@ -33,10 +33,8 @@ static CGFloat const labelSpacing = 5;
 
 
 @interface CHTimeIntervalPicker ()
-
 @property (nonatomic) CGFloat totalPickerWidth;
 @property (nonatomic) CGFloat numberWidth;
-
 @end
 
 

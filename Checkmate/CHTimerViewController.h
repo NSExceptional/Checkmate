@@ -13,10 +13,6 @@
 @interface CHTimerViewController : UIViewController
 
 @property (nonatomic) CHTimerView *activeTimer;
-
-- (void)toggleActiveTimer:(UITapGestureRecognizer *)sender;
-- (void)pause;
-- (void)resume;
 - (void)reset;
 
 @end

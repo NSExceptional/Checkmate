@@ -9,7 +9,6 @@
 #import "CHAppDelegate.h"
 #import "CHPageViewController.h"
 
-#import "CHTimerViewController.h"
 #import "CHSettingsViewController.h"
 
 
@@ -35,12 +34,13 @@
 }
 
 - (void)applyTheme {
-    [[NSClassFromString(@"_UITableViewHeaderFooterViewLabel") appearance] setTextColor:[UIColor colorWithWhite:1.000 alpha:0.6]];
     [UILabel appearance].textColor                   = [UIColor whiteColor];
     [UITableViewCell appearance].textLabel.textColor = [UIColor whiteColor];
     [UITableViewCell appearance].backgroundColor     = [UIColor colorWithWhite:0.080 alpha:1.000];
     [UITableView appearance].backgroundColor         = [UIColor blackColor];
     [UITableView appearance].separatorColor          = [UIColor colorWithWhite:0.150 alpha:1.000];
+    // This is bad but I am lazy
+    [[NSClassFromString(@"_UITableViewHeaderFooterViewLabel") appearance] setTextColor:[UIColor colorWithWhite:1.000 alpha:0.6]];
 }
 
 @end

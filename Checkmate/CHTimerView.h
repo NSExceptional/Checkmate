@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "CHTimerLabel.h"
 
+
 @class CHTimerView;
 @protocol CHTimerDelegate <NSObject>
 - (void)timerEnded:(CHTimerView *)timer;
 @end
 
 
-@interface CHTimerView : UIView
+@interface CHTimerView : UIView <CHTimerLabelDelegate>
 
 - (void)start;
 - (void)freeze;

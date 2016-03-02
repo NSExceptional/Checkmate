@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CHTimeIntervalPicker.h"
 
+
 @interface CHSettingsViewController : UITableViewController
 
-@property (nonatomic) CHTimerType timerType;
+@property (nonatomic          ) CHTimerType timerType;
 @property (nonatomic, readonly) CHTimeIntervalPicker *timerPicker;
 @property (nonatomic, readonly) CHTimeIntervalPicker *incrementPicker;
 

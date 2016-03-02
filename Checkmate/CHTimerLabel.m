@@ -18,6 +18,8 @@
 
 @implementation CHTimerLabel
 
+#pragma mark - Initialization / class methods
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -52,6 +54,8 @@
     }
 }
 
+#pragma mark - Properties
+
 - (NSTimer *)timer {
     if (!_timer) {
         _timer = [NSTimer timerWithTimeInterval:kTimerInterval target:self selector:@selector(tick) userInfo:nil repeats:YES];
@@ -68,8 +72,6 @@
     return _flashTimer;
 }
 
-#pragma mark - Public interface
-
 - (BOOL)isPaused { return _timer == nil; }
 
 - (BOOL)hasStarted { return _totalTime > self.timeLeft; }
@@ -84,6 +86,12 @@
 
 - (void)displayTime:(NSTimeInterval)timeLeft {
     CHTimerTextStyle newStyle = 0;
+    
+    // These if statements help determine when we need
+    // to reposition the label so that it is centered.
+    // The label cannot simply be centered because the
+    // font is not monospaced and the constant movement
+    // of the label would otherwise be distracting.
     
     // Hours
     if (_formatter.dateFormat != kFormatHours && timeLeft >= 3600) {
@@ -116,23 +124,25 @@
         if (timeLeft >= 540)
             newStyle = CHTimerTextStyleDefault;
     }
-    //
     
     self.text = [self.formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeLeft]];
     if (newStyle) {
-        if (self.textStyleChangeAction) self.textStyleChangeAction(newStyle);
+        [self.delegate label:self textStyleShouldChange:newStyle];
     }
     
     _visibleTime = timeLeft;
 }
 
 - (void)setTotalTime:(NSTimeInterval)totalTime {
+    // Only allow changing of this property if the timer has not started
     if (!self.hasStarted) {
         _totalTime     = totalTime;
         self.textColor = [UIColor whiteColor];
         [self displayTime:totalTime];
     }
 }
+
+#pragma mark - Public interface
 
 - (void)start {
     if (!self.isPaused) return;
@@ -148,7 +158,7 @@
     NSTimeInterval timeSincePause = [[NSDate date] timeIntervalSinceDate:_referenceDate];
     _referenceDate = nil;
     
-    // Timer pause delay
+    // Timer pause increment
     NSTimeInterval delay = useDelay ? self.delayAmount : 0;
     if (self.delayType == CHTimerTypeBronstein) {
         delay = MIN(timeSincePause, delay);
@@ -169,11 +179,9 @@
     [self displayTime:self.totalTime];
 }
 
-- (void)tick {
-    [self updateTimer];
-}
+#pragma mark - Private interface
 
-- (void)updateTimer {
+- (void)tick {
     NSTimeInterval timeLeft = MAX(self.timeLeft, 0.0);
     
     // Update text only if text would change, if low power mode is on
@@ -195,17 +203,21 @@
     self.timer = nil;
     _timeSpent = _totalTime;
     
-    if (self.timeUpAction) self.timeUpAction();
+    [self.delegate timeUp:self];
     
     // Begin flashing
     [[NSRunLoop mainRunLoop] addTimer:self.flashTimer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)flash {
+    // Flashes the label on and off
     UIColor *old = self.textColor;
     self.textColor = [UIColor clearColor];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.textColor = old;
+        // Don't change the color to red unless the flash timer is active
+        if (_flashTimer) {
+            self.textColor = old;
+        }
     });
 }
 

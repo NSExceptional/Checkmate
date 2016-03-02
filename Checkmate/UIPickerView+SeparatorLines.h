@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+/// Used to change the color of the separator lines in a UIPickerView.
 @interface UIPickerView (SeparatorLines)
 
 @property (nonatomic, readonly) UIView *bottomLineView_;

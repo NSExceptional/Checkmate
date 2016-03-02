@@ -7,6 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CHTimerLabel;
+
+
+@protocol CHTimerLabelDelegate <NSObject>
+
+- (void)timeUp:(CHTimerLabel *)label;
+- (void)label:(CHTimerLabel *)label textStyleShouldChange:(CHTimerTextStyle)newStyle;
+
+@end
 
 
 @interface CHTimerLabel : UILabel
@@ -17,8 +26,7 @@
 
 + (UIFont *)desiredFontForTextStyle:(CHTimerTextStyle)style;
 
-@property (nonatomic, copy) void (^timeUpAction)();
-@property (nonatomic, copy) void (^textStyleChangeAction)(CHTimerTextStyle);
+@property (nonatomic) id<CHTimerLabelDelegate> delegate;
 
 @property (nonatomic, readonly) BOOL hasStarted;
 @property (nonatomic, readonly) BOOL isPaused;

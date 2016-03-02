@@ -30,6 +30,7 @@
     self.title = @"Settings";
     self.tableView.layoutMargins = UIEdgeInsetsZero;
     
+    // Reuse identifiers per cell, accessed by [section][row]
     _reuseIdentifiers = @[@[kTimeLimitReuse], @[kCheckboxReuse, kCheckboxReuse], @[kIncrementReuse]];
     [self.tableView registerClass:[CHPickerCell class] forCellReuseIdentifier:kTimeLimitReuse];
     [self.tableView registerClass:[CHPickerCell class] forCellReuseIdentifier:kIncrementReuse];
@@ -41,9 +42,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSParameterAssert(indexPath.section == 1);
     
+    // The only selectable rows are in the second section
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    self.timerType = indexPath.row;
+    cell.accessoryType    = UITableViewCellAccessoryCheckmark;
+    self.timerType        = indexPath.row;
     [tableView reloadSection:1];
 }
 
@@ -55,11 +57,10 @@
     return indexPath.section == 1 ? 44 : 120;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-}
-
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section != 1) {
+        // Dispatched because the picker views did not have their
+        // separator lines created at this point.
         dispatch_async(dispatch_get_main_queue(), ^{
             CHPickerCell *celll = (id)cell;
             celll.picker.pickerView.bottomLineView_.backgroundColor = [UITableView appearance].separatorColor;
@@ -76,13 +77,14 @@
     
     switch (indexPath.section) {
         case 0: {
+            // Obtain a reference to the time interval picker
             _timerPicker = pickerCell.picker;
             _timerPicker.timeInterval = self.timeLimit;
             break;
         }
         case 1: {
             cell.textLabel.textColor = [UIColor whiteColor];
-            cell.textLabel.font = [cell.textLabel.font fontWithSize:17];
+            cell.textLabel.font      = [cell.textLabel.font fontWithSize:17];
             if (indexPath.row == self.timerType) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
             } else {
@@ -99,6 +101,7 @@
             break;
         }
         case 2: {
+            // Obtain a reference to the delay picker
             _incrementPicker = pickerCell.picker;
             _incrementPicker.timeInterval = self.delayAmount;
             break;
@@ -137,7 +140,7 @@
     return 3;
 }
 
-#pragma mark Helper
+#pragma mark Preference accessors
 
 - (NSTimeInterval)timeLimit {
     return [[NSUserDefaults standardUserDefaults] doubleForKey:kPref_TimerTime];

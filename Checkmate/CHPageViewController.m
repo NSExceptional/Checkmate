@@ -12,11 +12,10 @@
 
 
 @interface CHPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
-
 @property (nonatomic, readonly) CHTimerViewController *timerViewController;
 @property (nonatomic, readonly) CHSettingsViewController *settingsViewController;
-
 @end
+
 
 @implementation CHPageViewController
 
@@ -27,9 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.delegate = self;
-    self.dataSource = self;
-    _timerViewController = [CHTimerViewController new];
+    self.delegate           = self;
+    self.dataSource         = self;
+    _timerViewController    = [CHTimerViewController new];
     _settingsViewController = [CHSettingsViewController new];
     
     [self setViewControllers:@[_timerViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];

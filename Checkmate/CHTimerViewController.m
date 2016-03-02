@@ -14,7 +14,6 @@
 static NSInteger kButtonPadding = 60;
 
 @interface CHTimerViewController () <CHTimerDelegate>
-
 /// A is the upright one
 @property (nonatomic, readonly) CHTimerView *timerViewA;
 /// A is the upright one
@@ -30,9 +29,7 @@ static NSInteger kButtonPadding = 60;
 @property (nonatomic, readonly) UIButton *resetButton;
 
 @property (nonatomic) BOOL gameIsOver;
-
 @end
-
 
 @implementation CHTimerViewController
 
@@ -50,7 +47,7 @@ static NSInteger kButtonPadding = 60;
     CGRect tapUpright      = CGRectMake(0, tapUprightY, width, tapHeight);
     CGRect tapUpsideDown   = CGRectMake(0, 0, width, tapHeight);
     
-    
+    // Timer views
     _timerViewA = [[CHTimerView alloc] initWithFrame:tapUpright];
     _timerViewB = [[CHTimerView alloc] initWithFrame:tapUpsideDown];
     _timerViewB.transform = CGAffineTransformMakeRotation(M_PI);
@@ -72,21 +69,9 @@ static NSInteger kButtonPadding = 60;
     [_pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     [_playButton  setBackgroundImage:[UIImage imageNamed:@"play"]  forState:UIControlStateNormal];
     [_resetButton setBackgroundImage:[UIImage imageNamed:@"reset"] forState:UIControlStateNormal];
-    [_pauseButton sizeToFit]; [_playButton sizeToFit]; [_resetButton sizeToFit];
-    
-#if DEBUG_VIEW
-    self.timerViewA.backgroundColor = [UIColor darkGrayColor];
-    self.timerViewB.backgroundColor = [UIColor darkGrayColor];
-    self.timerViewA.label.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.500];
-    self.timerViewB.label.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.500];
-    UIView *tmp =  ({
-        CGFloat h = tapUpright.origin.y - CGRectGetHeight(tapUpsideDown);
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(tapUpsideDown), width, h)];
-        view.backgroundColor = [UIColor grayColor];
-        view;
-    });
-    [self.view addSubview:tmp];
-#endif
+    [_pauseButton sizeToFit];
+    [_playButton sizeToFit];
+    [_resetButton sizeToFit];
 }
 
 - (void)viewDidLoad {
@@ -102,6 +87,7 @@ static NSInteger kButtonPadding = 60;
     [self resetLabels];
 }
 
+/// Stop each timer and update their total time, delay amount, and delay type
 - (void)resetLabels {
     [self.timerViewA reset];
     [self.timerViewB reset];
@@ -113,6 +99,8 @@ static NSInteger kButtonPadding = 60;
     self.timerViewA.label.delayType = self.delayType;
     self.timerViewB.label.delayType = self.delayType;
 }
+
+#pragma mark - Preference accessors
 
 - (NSTimeInterval)timeLimit {
     return [[NSUserDefaults standardUserDefaults] doubleForKey:kPref_TimerTime];
@@ -184,11 +172,46 @@ static NSInteger kButtonPadding = 60;
     self.timerViewB.tapGesture.enabled = YES;
 }
 
+#pragma mark - Button actions
+
+- (void)resetButtonPressed {
+    [self reset];
+    
+    // Reposition both buttons and hide them
+    if (self.gameIsOver) {
+        // Add and fade in pause button
+        self.pauseButton.alpha = 0;
+        [self.view addSubview:self.pauseButton];
+        [self.pauseButton centerYInView:self.view alignToLeftWithPadding:kButtonPadding];
+        
+        // Fade out reset button, adjust frame
+        [UIView animateWithDuration:0.2 animations:^{
+            self.resetButton.alpha = 0;
+        }];
+    }
+    // Simply hide both buttons
+    else {
+        [self hideGameControls];
+    }
+}
+
+- (void)pauseButtonPressed {
+    [self togglePlayPauseButton];
+    [self pause];
+}
+
+- (void)playButtonPressed {
+    [self togglePlayPauseButton];
+    [self resume];
+}
+
 #pragma mark - Helper methods
 
+/// Called once to add and position the buttons in the view
 - (void)revealGameControls {
     self.pauseButton.alpha = 0;
     self.resetButton.alpha = 0;
+    self.playButton.alpha  = 0;
     
     [self.resetButton centerYInView:self.view alignToRightWithPadding:kButtonPadding];
     [self.pauseButton centerYInView:self.view alignToLeftWithPadding:kButtonPadding];
@@ -203,7 +226,11 @@ static NSInteger kButtonPadding = 60;
     }];
 }
 
+/// Called when the reset button is pressed during a paused game
 - (void)hideGameControls {
+    // Just in case
+    [self.pauseButton removeFromSuperview];
+    
     [UIView animateWithDuration:0.2 animations:^{
         self.playButton.alpha  = 0;
         self.pauseButton.alpha = 0;
@@ -217,35 +244,21 @@ static NSInteger kButtonPadding = 60;
     self.gameIsOver = YES;
     
     // Fade out and remove pause button
-    [UIView animateWithDuration:0.2 animations:^{
+    self.pauseButton.userInteractionEnabled = NO;
+    [UIView animateWithDuration:0.5 animations:^{
         self.pauseButton.alpha = 0;
     } completion:^(BOOL finished) {
+        self.pauseButton.userInteractionEnabled = YES;
         [self.pauseButton removeFromSuperview];
     }];
     
     // Sweep in reset button
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.resetButton.center = self.view.center;
     } completion:nil];
 }
 
-- (void)resetButtonPressed {
-    [self reset];
-    
-    if (self.gameIsOver) {
-        // Add and fade in pause button
-        [self.view addSubview:self.pauseButton];
-        [self.pauseButton centerYInView:self.view alignToLeftWithPadding:kButtonPadding];
-        
-        // Fade out reset button, adjust frame;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.resetButton.alpha = 0;
-        }];
-    } else {
-        [self hideGameControls];
-    }
-}
-
+/// Swap the play and pause buttons based on wither the pause button is visible
 - (void)togglePlayPauseButton {
     UIButton *reveal, *remove;
     if (self.pauseButton.alpha == 1) {
@@ -263,16 +276,6 @@ static NSInteger kButtonPadding = 60;
     } completion:^(BOOL finished) {
         [remove removeFromSuperview];
     }];
-}
-
-- (void)pauseButtonPressed {
-    [self togglePlayPauseButton];
-    [self pause];
-}
-
-- (void)playButtonPressed {
-    [self togglePlayPauseButton];
-    [self resume];
 }
 
 #pragma mark - CHTimerDelegate

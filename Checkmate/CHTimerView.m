@@ -8,15 +8,17 @@
 
 #import "CHTimerView.h"
 
+
 @implementation CHTimerView
+
+#pragma mark - Parent overrides
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         _label = [[CHTimerLabel alloc] initWithFrame:CGRectMake(60, 10, 1, 1)];
         _label.totalTime = 420;
-        _label.timeUpAction = ^{ [self timeUp]; };
-        _label.textStyleChangeAction = ^(CHTimerTextStyle s){ [self labelFontShouldChange:s]; };
+        _label.delegate  = self;
         
         _activeIndicatorLine = ({
             UIView *view         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 3)];
@@ -48,17 +50,15 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self.activeIndicatorLine setFrameY:CGRectGetHeight(self.frame)-60];
-    //    if ((self.label.isPaused && self.label.timeLeft > 0) || !self.label.hasStarted) {
-    //        [self.activeIndicatorLine setFrameX:CGRectGetWidth(self.frame)/2.f];
-    //    } else {
-    //        [self.activeIndicatorLine setFrameX:60];
-    //        [self.activeIndicatorLine setFrameWidth:self.activeIndicatorLineWidth];
-    //    }
     
+    // Position active indicator line 60 pts above the bottom
+    [self.activeIndicatorLine setFrameY:CGRectGetHeight(self.frame)-60];
+    
+    // Position label 60 pts above the bottom, center it, then
+    // extend the width from it's right side to the right edge
+    // of this view so the timer has room to expand without moving.
     [_label sizeToFit];
     [_label centerXInView:self alignToBottomWithPadding:60];
-    //CGRectGetWidth(_label.frame) + 4
     CGFloat x      = CGFloatRound(CGRectGetMinX(_label.frame));
     CGFloat dw     = x;
     CGFloat width  = CGRectGetWidth(_label.frame) + dw;
@@ -121,17 +121,17 @@
     self.activeIndicatorLine.backgroundColor = [UIColor whiteColor];
 }
 
-#pragma mark - Private
+#pragma mark - CHTimerLabelDelegate
 
-- (void)timeUp {
-    self.label.textColor = [UIColor colorWithRed:0.705 green:0.209 blue:0.226 alpha:1.000];
+- (void)timeUp:(CHTimerLabel *)label {
+    label.textColor = [UIColor colorWithRed:0.705 green:0.209 blue:0.226 alpha:1.000];
     self.activeIndicatorLine.backgroundColor = self.label.textColor;
     [self.delegate timerEnded:self];
 }
 
-- (void)labelFontShouldChange:(CHTimerTextStyle)newStyle {
-    self.label.font = [[self.label class] desiredFontForTextStyle:newStyle];
-    NSLog(@"Changed font size: %@", @(self.label.font.pointSize));
+- (void)label:(CHTimerLabel *)label textStyleShouldChange:(CHTimerTextStyle)newStyle {
+    label.font = [[label class] desiredFontForTextStyle:newStyle];
+    NSLog(@"Changed font size: %@", @(label.font.pointSize));
     
     [self setNeedsLayout];
     [self layoutIfNeeded];

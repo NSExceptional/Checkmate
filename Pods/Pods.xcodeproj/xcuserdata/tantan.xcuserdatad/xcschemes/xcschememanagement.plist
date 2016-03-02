@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MirrorKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Objc-Foundation-Extensions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5B46EC1FB1929BC978E258705AF915FE</key>
+		<key>023E809521F44315C5D4D1DA71708320</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69E813215574E0B3D52C4BE036E59635</key>
+		<key>3FEDF9E1479D9C0523B8C2C74CDC83D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A76BD81788ECC9DCDD751B4DFD69F10</key>
+		<key>8062B8900CF3B78BD84AB39FE411E10D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BCC98102CC8F6BE993B9F6D7E9BBC60</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B6BA29E1AF9731F146C8CCDAE6E15562</key>
+		<key>D06BD206F4C9E0718757322019856947</key>
 		<dict>
 			<key>primary</key>
 			<true/>

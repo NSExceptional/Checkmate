@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18238DB05ABD28C9841BAE85 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2DEFB7324FBE7645136A80 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A7FA13E9E29B71D302FECCE4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 829EAEA59A0CA28D9E516146 /* libPods.a */; };
 		B428B4F71C82A357000E5569 /* CHTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B428B4F61C82A357000E5569 /* CHTimerView.m */; };
 		B44ADEE01C7D411C0038FBA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEDF1C7D411C0038FBA7 /* main.m */; };
 		B44ADEE31C7D411C0038FBA7 /* CHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */; };
@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		026F00CD1B54EE82A0BE1390 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		57F683942F569A9B02C5EB90 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		829EAEA59A0CA28D9E516146 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B428B4F51C82A357000E5569 /* CHTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerView.h; sourceTree = "<group>"; };
 		B428B4F61C82A357000E5569 /* CHTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerView.m; sourceTree = "<group>"; };
 		B44ADEDB1C7D411C0038FBA7 /* Checkmate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkmate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +55,6 @@
 		B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimeIntervalPicker.m; sourceTree = "<group>"; };
 		B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerLabel.h; sourceTree = "<group>"; };
 		B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerLabel.m; sourceTree = "<group>"; };
-		DB2DEFB7324FBE7645136A80 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18238DB05ABD28C9841BAE85 /* Pods.framework in Frameworks */,
+				A7FA13E9E29B71D302FECCE4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,7 @@
 		0FD6ABD0296A21AFE042790A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DB2DEFB7324FBE7645136A80 /* Pods.framework */,
+				829EAEA59A0CA28D9E516146 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,7 +157,6 @@
 				B44ADED81C7D411C0038FBA7 /* Frameworks */,
 				B44ADED91C7D411C0038FBA7 /* Resources */,
 				4338EC2E8B53D63011F61792 /* Copy Pods Resources */,
-				4170D185C0DC4674E4126EB2 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,21 +228,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4170D185C0DC4674E4126EB2 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4338EC2E8B53D63011F61792 /* Copy Pods Resources */ = {
