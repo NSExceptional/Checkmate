@@ -43,6 +43,7 @@ extern NSString * const kCheckboxReuse;
 
 #pragma mark - Preferences
 
+extern NSString * const kPref_DidBounce;
 extern NSString * const kPref_TimerTime;
 extern NSString * const kPref_TimerStyle;
 extern NSString * const kPref_TimerIncrement;

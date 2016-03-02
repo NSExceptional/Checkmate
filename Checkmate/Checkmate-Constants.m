@@ -31,6 +31,7 @@ NSString * const kCheckboxReuse  = @"_CHCheckboxReuse";
 
 #pragma mark - Preferences
 
-NSString * const kPref_TimerTime = @"timer_time";
-NSString * const kPref_TimerStyle = @"timer_style";
+NSString * const kPref_DidBounce      = @"did_show_bounce";
+NSString * const kPref_TimerTime      = @"timer_time";
+NSString * const kPref_TimerStyle     = @"timer_style";
 NSString * const kPref_TimerIncrement = @"timer_increment";

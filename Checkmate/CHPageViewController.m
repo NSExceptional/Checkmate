@@ -14,6 +14,10 @@
 @interface CHPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 @property (nonatomic, readonly) CHTimerViewController *timerViewController;
 @property (nonatomic, readonly) CHSettingsViewController *settingsViewController;
+
+@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) UIGravityBehavior *gravityBehaviour;
+@property (nonatomic, strong) UIPushBehavior *pushBehavior;
 @end
 
 
@@ -32,6 +36,84 @@
     _settingsViewController = [CHSettingsViewController new];
     
     [self setViewControllers:@[_timerViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    BOOL shouldBounce = ![[NSUserDefaults standardUserDefaults] boolForKey:kPref_DidBounce];
+    
+    if (shouldBounce) {
+        self.view.userInteractionEnabled = NO;
+        [self setupBounceAnimation];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (!self.timerViewController.activeTimer) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kPref_DidBounce];
+                
+                // Display message
+                [self presentSettingsNotification];
+                // Actually bounce after 2 seconds
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self bounceTimerView];
+                });
+            }
+        });
+    }
+}
+
+- (void)setupBounceAnimation {
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
+    UICollisionBehavior *collisionBehaviour = [[UICollisionBehavior alloc] initWithItems:@[self.timerViewController.view]];
+    // Create a boundary that lies above the top edge of the screen
+    [collisionBehaviour setTranslatesReferenceBoundsIntoBoundaryWithInsets:UIEdgeInsetsMake(-300, 0, 0, 0)];
+    [self.animator addBehavior:collisionBehaviour];
+    
+    self.gravityBehaviour = [[UIGravityBehavior alloc] initWithItems:@[self.timerViewController.view]];
+    self.gravityBehaviour.gravityDirection = CGVectorMake(0, 1);
+    [self.animator addBehavior:self.gravityBehaviour];
+    
+    self.pushBehavior = [[UIPushBehavior alloc] initWithItems:@[self.timerViewController.view] mode:UIPushBehaviorModeInstantaneous];
+    self.pushBehavior.magnitude = 0.0f;
+    self.pushBehavior.angle = 0.0f;
+    [self.animator addBehavior:self.pushBehavior];
+    
+    UIDynamicItemBehavior *itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:@[self.timerViewController.view]];
+    itemBehaviour.elasticity = 0.6f;
+    [self.animator addBehavior:itemBehaviour];
+}
+
+- (void)bounceTimerView {
+    // active is reset to NO after force is applied
+    self.pushBehavior.pushDirection = CGVectorMake(0, -75);
+    self.pushBehavior.active = YES;
+}
+
+- (void)presentSettingsNotification {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    label.text = @"Swipe to reveal settings";
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:27 weight:UIFontWeightLight];
+    label.alpha = 0;
+    [label sizeToFit];
+    label.center = self.view.center;
+    
+    [self.view addSubview:label];
+    
+    // Fade in, fade out, remove
+    [UIView animateWithDuration:0.333 animations:^{
+        label.alpha = 1;
+    } completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.333 animations:^{
+                label.alpha = 0;
+            } completion:^(BOOL finished) {
+                [label removeFromSuperview];
+                self.view.userInteractionEnabled = YES;
+            }];
+        });
+    }];
 }
 
 #pragma mark - UIPageViewControllerDataSource
