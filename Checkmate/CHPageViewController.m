@@ -50,6 +50,8 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers {
     if ([pendingViewControllers containsObject:self.timerViewController]) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+        
         // Save settings
         [[NSUserDefaults standardUserDefaults] setDouble:self.settingsViewController.timerPicker.timeInterval forKey:kPref_TimerTime];
         [[NSUserDefaults standardUserDefaults] setDouble:self.settingsViewController.incrementPicker.timeInterval forKey:kPref_TimerIncrement];
@@ -59,6 +61,14 @@
         if (self.timerViewController.activeTimer == nil) {
             [self.timerViewController reset];
         }
+    }
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if ([previousViewControllers containsObject:self.timerViewController]) {
+        [[UIApplication sharedApplication] setStatusBarHidden:!completed withAnimation:UIStatusBarAnimationFade];
+    } else {
+        [[UIApplication sharedApplication] setStatusBarHidden:completed withAnimation:UIStatusBarAnimationFade];
     }
 }
 
