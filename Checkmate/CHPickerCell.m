@@ -11,6 +11,15 @@
 
 @implementation CHPickerCell
 
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self awakeFromNib];
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     // Initialize picker and set label colors
     _picker = [[CHTimeIntervalPicker alloc] initWithFrame:self.bounds];

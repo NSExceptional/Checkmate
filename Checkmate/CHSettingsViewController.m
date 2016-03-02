@@ -30,6 +30,9 @@
     self.title = @"Settings";
     self.tableView.layoutMargins = UIEdgeInsetsZero;
     
+    // Load mutable value from preferences
+    self.timerType = self.delayType;
+    
     // Reuse identifiers per cell, accessed by [section][row]
     _reuseIdentifiers = @[@[kTimeLimitReuse], @[kCheckboxReuse, kCheckboxReuse], @[kIncrementReuse]];
     [self.tableView registerClass:[CHPickerCell class] forCellReuseIdentifier:kTimeLimitReuse];
