@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 @property (nonatomic, strong) UIGravityBehavior *gravityBehaviour;
 @property (nonatomic, strong) UIPushBehavior *pushBehavior;
+
+@property (nonatomic, readonly) BOOL enablePaging;
 @end
 
 
@@ -34,6 +36,12 @@
     self.dataSource         = self;
     _timerViewController    = [CHCountdownViewController new];
     _settingsViewController = [CHSettingsViewController new];
+    
+    // Disable scrolling when the timer is active
+#pragma clang diagnostic ignored "-Warc-retain-cycles"
+    self.timerViewController.pauseAction  = ^{ self.scrollEnabled = YES; };
+    self.timerViewController.resumeAction = ^{ self.scrollEnabled = NO; };
+    self.timerViewController.resetAction  = ^{ self.scrollEnabled = YES; };
     
     [self setViewControllers:@[_timerViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
@@ -114,6 +122,26 @@
             }];
         });
     }];
+}
+
+- (BOOL)enablePaging { return self.timerViewController.isPaused; }
+
+- (BOOL)scrollEnabled {
+    // Should be safe even if the private view layout changes
+    UIScrollView *scrollView = self.view.subviews.firstObject;
+    if ([scrollView isKindOfClass:[UIScrollView class]]) {
+        return scrollView.isScrollEnabled;
+    }
+    
+    return YES;
+}
+
+- (void)setScrollEnabled:(BOOL)scrollEnabled {
+    // Should be safe even if the private view layout changes
+    UIScrollView *scrollView = self.view.subviews.firstObject;
+    if ([scrollView isKindOfClass:[UIScrollView class]]) {
+        scrollView.scrollEnabled = scrollEnabled;
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource

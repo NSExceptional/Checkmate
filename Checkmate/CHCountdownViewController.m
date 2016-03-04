@@ -101,6 +101,12 @@ static NSInteger kButtonPadding = 60;
     self.timerB.delayType = self.delayType;
 }
 
+- (BOOL)isPaused {
+    return self.timerA.isPaused && self.timerB.isPaused;
+}
+
+- (BOOL)hasStarted { return _activeTimer != nil; }
+
 #pragma mark - Preference accessors
 
 - (NSTimeInterval)timeLimit {
@@ -118,7 +124,7 @@ static NSInteger kButtonPadding = 60;
 #pragma mark - Primary methods
 
 - (void)toggleActiveTimer:(UITapGestureRecognizer *)sender {
-    if (self.activeTimer == nil) {
+    if (!self.hasStarted) {
         [self revealGameControls];
     }
     
@@ -137,6 +143,7 @@ static NSInteger kButtonPadding = 60;
     }
     
     [self.activeTimer start];
+    if (self.resumeAction) self.resumeAction();
 }
 
 - (void)pause {
@@ -149,6 +156,8 @@ static NSInteger kButtonPadding = 60;
         self.timerA.view.alpha = 0.5;
         self.timerB.view.alpha = 0.5;
     }];
+    
+    if (self.pauseAction) self.pauseAction();
 }
 
 - (void)resume {
@@ -161,16 +170,23 @@ static NSInteger kButtonPadding = 60;
         self.timerA.view.alpha = 1;
         self.timerB.view.alpha = 1;
     }];
+    
+    if (self.resumeAction) self.resumeAction();
 }
 
 - (void)reset {
-    [self resume];
     [self.activeTimer pause];
     self.activeTimer = nil;
     
     [self resetLabels];
     self.timerA.tapGesture.enabled = YES;
     self.timerB.tapGesture.enabled = YES;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.timerA.view.alpha = 1;
+        self.timerB.view.alpha = 1;
+    }];
+    
+    if (self.resetAction) self.resetAction();
 }
 
 #pragma mark - Button actions

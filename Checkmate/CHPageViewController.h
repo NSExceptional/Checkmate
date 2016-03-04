@@ -11,4 +11,6 @@
 
 @interface CHPageViewController : UIPageViewController
 
+@property (nonatomic) BOOL scrollEnabled;
+
 @end

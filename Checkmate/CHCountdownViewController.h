@@ -13,6 +13,13 @@
 @interface CHCountdownViewController : UIViewController
 
 @property (nonatomic) CHTimerController *activeTimer;
+@property (nonatomic, readonly) BOOL isPaused;
+@property (nonatomic, readonly) BOOL hasStarted;
+
+@property (nonatomic, copy) void (^pauseAction)();
+@property (nonatomic, copy) void (^resumeAction)();
+@property (nonatomic, copy) void (^resetAction)();
+
 - (void)reset;
 
 @end

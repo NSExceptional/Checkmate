@@ -9,6 +9,7 @@
 #import "CHTimerController.h"
 #import "CHTimerView.h"
 
+
 @interface CHTimerController () <CHTimerStateDelegate>
 @property (nonatomic, readonly) CHTimerLabel *label;
 @property (nonatomic, readonly) UIView *activeIndicatorLine;
