@@ -10,26 +10,20 @@
 #import "CHTimerLabel.h"
 
 
-@class CHTimerView;
-@protocol CHTimerDelegate <NSObject>
-- (void)timerEnded:(CHTimerView *)timer;
+@protocol CHTimerStateDelegate <NSObject>
+
+@property (nonatomic, readonly) BOOL isPaused;
+@property (nonatomic, readonly) BOOL hasStarted;
+@property (nonatomic, readonly) NSTimeInterval timeLeft;
+@property (nonatomic, readonly) CGFloat activeIndicatorLineWidth;
+
 @end
 
 
-@interface CHTimerView : UIView <CHTimerLabelDelegate>
-
-- (void)start;
-- (void)freeze;
-- (void)pause;
-- (void)reset;
-
-@property (nonatomic) id<CHTimerDelegate> delegate;
+@interface CHTimerView : UIView
 
 @property (nonatomic, readonly) CHTimerLabel *label;
 @property (nonatomic, readonly) UIView *activeIndicatorLine;
-@property (nonatomic, readonly) CGFloat activeIndicatorLineWidth;
-@property (nonatomic, readonly) CGFloat activeIndicatorLineX;
-
-@property (nonatomic) UITapGestureRecognizer *tapGesture;
+@property (nonatomic) id<CHTimerStateDelegate> delegate;
 
 @end

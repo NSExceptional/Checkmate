@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CHTimerView.h"
+#import "CHTimerController.h"
 
 
-@interface CHTimerViewController : UIViewController
+@interface CHCountdownViewController : UIViewController
 
-@property (nonatomic) CHTimerView *activeTimer;
+@property (nonatomic) CHTimerController *activeTimer;
 - (void)reset;
 
 @end

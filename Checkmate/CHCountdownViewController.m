@@ -6,18 +6,17 @@
 //  Copyright © 2016 Tanner Bennett. All rights reserved.
 //
 
-#import "CHTimerViewController.h"
-#import "CHTimerView.h"
+#import "CHCountdownViewController.h"
 #import "UIView+Util.h"
 
 
 static NSInteger kButtonPadding = 60;
 
-@interface CHTimerViewController () <CHTimerDelegate>
+@interface CHCountdownViewController () <CHTimerDelegate>
 /// A is the upright one
-@property (nonatomic, readonly) CHTimerView *timerViewA;
+@property (nonatomic, readonly) CHTimerController *timerA;
 /// A is the upright one
-@property (nonatomic, readonly) CHTimerView *timerViewB;
+@property (nonatomic, readonly) CHTimerController *timerB;
 
 @property (nonatomic, readonly) NSDateComponentsFormatter *formatter;
 @property (nonatomic, readonly) NSTimeInterval timeLimit;
@@ -31,7 +30,7 @@ static NSInteger kButtonPadding = 60;
 @property (nonatomic) BOOL gameIsOver;
 @end
 
-@implementation CHTimerViewController
+@implementation CHCountdownViewController
 
 - (void)loadView {
     [super loadView];
@@ -48,14 +47,16 @@ static NSInteger kButtonPadding = 60;
     CGRect tapUpsideDown   = CGRectMake(0, 0, width, tapHeight);
     
     // Timer views
-    _timerViewA = [[CHTimerView alloc] initWithFrame:tapUpright];
-    _timerViewB = [[CHTimerView alloc] initWithFrame:tapUpsideDown];
-    _timerViewB.transform = CGAffineTransformMakeRotation(M_PI);
-    _timerViewA.backgroundColor = [UIColor blackColor];
-    _timerViewB.backgroundColor = [UIColor blackColor];
+    _timerA = [CHTimerController new];
+    _timerB = [CHTimerController new];
+    _timerA.view.frame = tapUpright;
+    _timerB.view.frame = tapUpsideDown;
+    _timerB.view.transform = CGAffineTransformMakeRotation(M_PI);
+    _timerA.view.backgroundColor = [UIColor blackColor];
+    _timerB.view.backgroundColor = [UIColor blackColor];
     
-    [self.view addSubview:_timerViewA];
-    [self.view addSubview:_timerViewB];
+    [self.view addSubview:_timerA.view];
+    [self.view addSubview:_timerB.view];
     
     // Buttons
     _pauseButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -78,26 +79,26 @@ static NSInteger kButtonPadding = 60;
     [super viewDidLoad];
     
     // Timer ended callback
-    self.timerViewA.delegate = self;
-    self.timerViewB.delegate = self;
+    self.timerA.delegate = self;
+    self.timerB.delegate = self;
     
-    self.timerViewA.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleActiveTimer:)];
-    self.timerViewB.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleActiveTimer:)];
+    self.timerA.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleActiveTimer:)];
+    self.timerB.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleActiveTimer:)];
     
     [self resetLabels];
 }
 
 /// Stop each timer and update their total time, delay amount, and delay type
 - (void)resetLabels {
-    [self.timerViewA reset];
-    [self.timerViewB reset];
-    self.timerViewA.label.totalTime = self.timeLimit;
-    self.timerViewB.label.totalTime = self.timeLimit;
+    [self.timerA reset];
+    [self.timerB reset];
+    self.timerA.totalTime = self.timeLimit;
+    self.timerB.totalTime = self.timeLimit;
     
-    self.timerViewA.label.delayAmount = self.delayAmount;
-    self.timerViewB.label.delayAmount = self.delayAmount;
-    self.timerViewA.label.delayType = self.delayType;
-    self.timerViewB.label.delayType = self.delayType;
+    self.timerA.delayAmount = self.delayAmount;
+    self.timerB.delayAmount = self.delayAmount;
+    self.timerA.delayType = self.delayType;
+    self.timerB.delayType = self.delayType;
 }
 
 #pragma mark - Preference accessors
@@ -124,15 +125,15 @@ static NSInteger kButtonPadding = 60;
     [self.activeTimer pause];
     
     // Swap active timer and toggle enabled gestures
-    if (sender == self.timerViewA.tapGesture) {
-        self.activeTimer = self.timerViewB;
-        self.timerViewA.tapGesture.enabled = NO;
-        self.timerViewB.tapGesture.enabled = YES;
+    if (sender == self.timerA.tapGesture) {
+        self.activeTimer = self.timerB;
+        self.timerA.tapGesture.enabled = NO;
+        self.timerB.tapGesture.enabled = YES;
     }
-    else if (sender == self.timerViewB.tapGesture) {
-        self.activeTimer = self.timerViewA;
-        self.timerViewA.tapGesture.enabled = YES;
-        self.timerViewB.tapGesture.enabled = NO;
+    else if (sender == self.timerB.tapGesture) {
+        self.activeTimer = self.timerA;
+        self.timerA.tapGesture.enabled = YES;
+        self.timerB.tapGesture.enabled = NO;
     }
     
     [self.activeTimer start];
@@ -145,8 +146,8 @@ static NSInteger kButtonPadding = 60;
     // method because this is a different kind of
     // "pause" than the usual pause of each label.
     [UIView animateWithDuration:0.2 animations:^{
-        self.timerViewA.label.alpha = 0.5;
-        self.timerViewB.label.alpha = 0.5;
+        self.timerA.view.alpha = 0.5;
+        self.timerB.view.alpha = 0.5;
     }];
 }
 
@@ -157,8 +158,8 @@ static NSInteger kButtonPadding = 60;
     // method because this is a different kind of
     // "resume" than the usual start of each label.
     [UIView animateWithDuration:0.2 animations:^{
-        self.timerViewA.label.alpha = 1;
-        self.timerViewB.label.alpha = 1;
+        self.timerA.view.alpha = 1;
+        self.timerB.view.alpha = 1;
     }];
 }
 
@@ -168,8 +169,8 @@ static NSInteger kButtonPadding = 60;
     self.activeTimer = nil;
     
     [self resetLabels];
-    self.timerViewA.tapGesture.enabled = YES;
-    self.timerViewB.tapGesture.enabled = YES;
+    self.timerA.tapGesture.enabled = YES;
+    self.timerB.tapGesture.enabled = YES;
 }
 
 #pragma mark - Button actions
@@ -280,9 +281,9 @@ static NSInteger kButtonPadding = 60;
 
 #pragma mark - CHTimerDelegate
 
-- (void)timerEnded:(CHTimerLabel *)timer {
-    self.timerViewA.tapGesture.enabled = NO;
-    self.timerViewB.tapGesture.enabled = NO;
+- (void)timerEnded:(CHTimerController *)timer {
+    self.timerA.tapGesture.enabled = NO;
+    self.timerB.tapGesture.enabled = NO;
     [self showGameOverControls];
 }
 

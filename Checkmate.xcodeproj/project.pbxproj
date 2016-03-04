@@ -13,7 +13,7 @@
 		B44ADEE31C7D411C0038FBA7 /* CHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */; };
 		B44ADEF11C7D411C0038FBA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44ADEF01C7D411C0038FBA7 /* Assets.xcassets */; };
 		B44ADEFD1C7D42F10038FBA7 /* CHPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */; };
-		B44ADF001C7D43010038FBA7 /* CHTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEFF1C7D43010038FBA7 /* CHTimerViewController.m */; };
+		B44ADF001C7D43010038FBA7 /* CHCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADEFF1C7D43010038FBA7 /* CHCountdownViewController.m */; };
 		B44ADF031C7D43150038FBA7 /* CHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */; };
 		B44ADF0A1C7D59840038FBA7 /* CHPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF091C7D59840038FBA7 /* CHPickerCell.m */; };
 		B44ADF0E1C7D5DD50038FBA7 /* Checkmate-Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF0D1C7D5DD50038FBA7 /* Checkmate-Constants.m */; };
@@ -21,6 +21,7 @@
 		B44ADF131C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */; };
 		B4AE61BD1C8574D0004BB75A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AE61BC1C8574D0004BB75A /* Launch.xib */; };
 		B4ED77C21C8560CB00CCC231 /* CHTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */; };
+		B4EE51031C89752E00BA0815 /* CHTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EE51021C89752E00BA0815 /* CHTimerController.m */; };
 		B4EEBA9E1C8266D800B414AC /* CHTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +39,8 @@
 		B44ADEF51C7D411C0038FBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B44ADEFB1C7D42F10038FBA7 /* CHPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPageViewController.h; sourceTree = "<group>"; };
 		B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPageViewController.m; sourceTree = "<group>"; };
-		B44ADEFE1C7D43010038FBA7 /* CHTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerViewController.h; sourceTree = "<group>"; };
-		B44ADEFF1C7D43010038FBA7 /* CHTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerViewController.m; sourceTree = "<group>"; };
+		B44ADEFE1C7D43010038FBA7 /* CHCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCountdownViewController.h; sourceTree = "<group>"; };
+		B44ADEFF1C7D43010038FBA7 /* CHCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCountdownViewController.m; sourceTree = "<group>"; };
 		B44ADF011C7D43150038FBA7 /* CHSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSettingsViewController.h; sourceTree = "<group>"; };
 		B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSettingsViewController.m; sourceTree = "<group>"; };
 		B44ADF081C7D59840038FBA7 /* CHPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPickerCell.h; sourceTree = "<group>"; };
@@ -53,6 +54,8 @@
 		B4AE61BC1C8574D0004BB75A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		B4ED77C01C8560CB00CCC231 /* CHTimeIntervalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimeIntervalPicker.h; sourceTree = "<group>"; };
 		B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimeIntervalPicker.m; sourceTree = "<group>"; };
+		B4EE51011C89752E00BA0815 /* CHTimerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerController.h; sourceTree = "<group>"; };
+		B4EE51021C89752E00BA0815 /* CHTimerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerController.m; sourceTree = "<group>"; };
 		B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerLabel.h; sourceTree = "<group>"; };
 		B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +105,10 @@
 				B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */,
 				B44ADEFB1C7D42F10038FBA7 /* CHPageViewController.h */,
 				B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */,
-				B44ADEFE1C7D43010038FBA7 /* CHTimerViewController.h */,
-				B44ADEFF1C7D43010038FBA7 /* CHTimerViewController.m */,
+				B44ADEFE1C7D43010038FBA7 /* CHCountdownViewController.h */,
+				B44ADEFF1C7D43010038FBA7 /* CHCountdownViewController.m */,
+				B4EE51011C89752E00BA0815 /* CHTimerController.h */,
+				B4EE51021C89752E00BA0815 /* CHTimerController.m */,
 				B428B4F51C82A357000E5569 /* CHTimerView.h */,
 				B428B4F61C82A357000E5569 /* CHTimerView.m */,
 				B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */,
@@ -261,7 +266,8 @@
 				B44ADEFD1C7D42F10038FBA7 /* CHPageViewController.m in Sources */,
 				B44ADF131C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m in Sources */,
 				B428B4F71C82A357000E5569 /* CHTimerView.m in Sources */,
-				B44ADF001C7D43010038FBA7 /* CHTimerViewController.m in Sources */,
+				B44ADF001C7D43010038FBA7 /* CHCountdownViewController.m in Sources */,
+				B4EE51031C89752E00BA0815 /* CHTimerController.m in Sources */,
 				B44ADF0E1C7D5DD50038FBA7 /* Checkmate-Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

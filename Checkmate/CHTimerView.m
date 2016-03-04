@@ -17,8 +17,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         _label = [[CHTimerLabel alloc] initWithFrame:CGRectMake(60, 10, 1, 1)];
-        _label.totalTime = 420;
-        _label.delegate  = self;
         
         _activeIndicatorLine = ({
             UIView *view         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 3)];
@@ -38,11 +36,11 @@
     super.frame = frame;
     
     [self.activeIndicatorLine setFrameY:CGRectGetHeight(self.frame)-60];
-    if ((self.label.isPaused && self.label.timeLeft > 0) || !self.label.hasStarted) {
+    if ((self.delegate.isPaused && self.delegate.timeLeft > 0) || !self.delegate.hasStarted) {
         [self.activeIndicatorLine setFrameX:CGRectGetWidth(self.frame)/2.f];
     } else {
         [self.activeIndicatorLine setFrameX:60];
-        [self.activeIndicatorLine setFrameWidth:self.activeIndicatorLineWidth];
+        [self.activeIndicatorLine setFrameWidth:self.delegate.activeIndicatorLineWidth];
     }
     
     [_label centerXInView:self alignToBottomWithPadding:60];
@@ -69,72 +67,5 @@
 }
 
 #pragma mark - Public interface
-
-- (CGFloat)activeIndicatorLineWidth {
-    return CGRectGetWidth(self.frame) - 60;
-}
-
-- (CGFloat)activeIndicatorLineX {
-    return (CGRectGetWidth(self.frame) - self.activeIndicatorLineWidth) / 2.f;
-}
-
-- (void)setTapGesture:(UITapGestureRecognizer *)tapGesture {
-    if (_tapGesture) {
-        [self removeGestureRecognizer:_tapGesture];
-    }
-    if (tapGesture) {
-        [self addGestureRecognizer:tapGesture];
-    }
-    
-    _tapGesture = tapGesture;
-}
-
-- (void)start {
-    [self.label start];
-    [UIView animateWithDuration:0.2 animations:^{
-        [self.activeIndicatorLine setFrameX:self.activeIndicatorLineX];
-        [self.activeIndicatorLine setFrameWidth:self.activeIndicatorLineWidth];
-    }];
-}
-
-- (void)freeze {
-    [self.label pauseUseDelay:NO];
-    
-    [UIView animateWithDuration:0.2 animations:^{
-        [self.activeIndicatorLine setFrameX:CGRectGetWidth(self.frame)/2.f];
-        [self.activeIndicatorLine setFrameWidth:0];
-    }];
-}
-
-- (void)pause {
-    [self.label pauseUseDelay:YES];
-    
-    [UIView animateWithDuration:0.2 animations:^{
-        [self.activeIndicatorLine setFrameX:CGRectGetWidth(self.frame)/2.f];
-        [self.activeIndicatorLine setFrameWidth:0];
-    }];
-}
-
-- (void)reset {
-    [self.label reset];
-    self.label.textColor = [UIColor whiteColor];
-    self.activeIndicatorLine.backgroundColor = [UIColor whiteColor];
-}
-
-#pragma mark - CHTimerLabelDelegate
-
-- (void)timeUp:(CHTimerLabel *)label {
-    label.textColor = [UIColor colorWithRed:0.705 green:0.209 blue:0.226 alpha:1.000];
-    self.activeIndicatorLine.backgroundColor = self.label.textColor;
-    [self.delegate timerEnded:self];
-}
-
-- (void)label:(CHTimerLabel *)label textStyleShouldChange:(CHTimerTextStyle)newStyle {
-    label.font = [[label class] desiredFontForTextStyle:newStyle];
-    NSLog(@"Changed font size: %@", @(label.font.pointSize));
-    
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
-}
 
 @end

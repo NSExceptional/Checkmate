@@ -7,12 +7,12 @@
 //
 
 #import "CHPageViewController.h"
-#import "CHTimerViewController.h"
+#import "CHCountdownViewController.h"
 #import "CHSettingsViewController.h"
 
 
 @interface CHPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
-@property (nonatomic, readonly) CHTimerViewController *timerViewController;
+@property (nonatomic, readonly) CHCountdownViewController *timerViewController;
 @property (nonatomic, readonly) CHSettingsViewController *settingsViewController;
 
 @property (nonatomic, strong) UIDynamicAnimator *animator;
@@ -32,7 +32,7 @@
     
     self.delegate           = self;
     self.dataSource         = self;
-    _timerViewController    = [CHTimerViewController new];
+    _timerViewController    = [CHCountdownViewController new];
     _settingsViewController = [CHSettingsViewController new];
     
     [self setViewControllers:@[_timerViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -53,8 +53,8 @@
                 
                 // Display message
                 [self presentSettingsNotification];
-                // Actually bounce after 2 seconds
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                // Actually bounce after 1 second
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self bounceTimerView];
                 });
             }
@@ -105,7 +105,7 @@
     [UIView animateWithDuration:0.333 animations:^{
         label.alpha = 1;
     } completion:^(BOOL finished) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.333 animations:^{
                 label.alpha = 0;
             } completion:^(BOOL finished) {
