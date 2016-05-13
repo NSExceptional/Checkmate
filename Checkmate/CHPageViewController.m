@@ -94,7 +94,7 @@
 
 - (void)bounceTimerView {
     // active is reset to NO after force is applied
-    self.pushBehavior.pushDirection = CGVectorMake(0, -75);
+    self.pushBehavior.pushDirection = CGVectorMake(0, -60);
     self.pushBehavior.active = YES;
 }
 

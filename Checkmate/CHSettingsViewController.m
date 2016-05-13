@@ -9,9 +9,10 @@
 #import "CHSettingsViewController.h"
 #import "CHPickerCell.h"
 #import "UIPickerView+SeparatorLines.h"
+#import <MessageUI/MessageUI.h>
 
 
-@interface CHSettingsViewController ()
+@interface CHSettingsViewController () <MFMailComposeViewControllerDelegate>
 @property (nonatomic, readonly) NSArray *reuseIdentifiers;
 
 @property (nonatomic, readonly) NSTimeInterval timeLimit;
@@ -34,7 +35,7 @@
     self.timerType = self.delayType;
     
     // Reuse identifiers per cell, accessed by [section][row]
-    _reuseIdentifiers = @[@[kTimeLimitReuse], @[kCheckboxReuse, kCheckboxReuse], @[kIncrementReuse]];
+    _reuseIdentifiers = @[@[kTimeLimitReuse], @[kCheckboxReuse, kCheckboxReuse], @[kIncrementReuse], @[kCheckboxReuse]];
     [self.tableView registerClass:[CHPickerCell class] forCellReuseIdentifier:kTimeLimitReuse];
     [self.tableView registerClass:[CHPickerCell class] forCellReuseIdentifier:kIncrementReuse];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCheckboxReuse];
@@ -43,25 +44,36 @@
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSParameterAssert(indexPath.section == 1);
+    NSParameterAssert(indexPath.section == 1 || indexPath.section == 3);
     
-    // The only selectable rows are in the second section
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType    = UITableViewCellAccessoryCheckmark;
-    self.timerType        = indexPath.row;
-    [tableView reloadSection:1];
+    // The only selectable rows are in the second and fourth sections
+    if (indexPath.section == 1) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.accessoryType    = UITableViewCellAccessoryCheckmark;
+        self.timerType        = indexPath.row;
+        [tableView reloadSection:1];
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self composeEmail];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.section == 1;
+    return indexPath.section == 1 || indexPath.section == 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.section == 1 ? 44 : 120;
+    switch (indexPath.section) {
+        case 0:
+        case 2:
+            return 120;
+        default:
+            return 44;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section != 1) {
+    if (indexPath.section == 0 || indexPath.section == 2) {
         // Dispatched because the picker views did not have their
         // separator lines created at this point.
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -109,6 +121,11 @@
             _incrementPicker.timeInterval = self.delayAmount;
             break;
         }
+        case 3: {
+            cell.textLabel.text = @"Send feedback";
+            cell.textLabel.textColor = [UIColor colorWithRed:0.000 green:0.400 blue:1.000 alpha:1.000];
+            cell.textLabel.font      = [cell.textLabel.font fontWithSize:17];
+        }
     }
     
     return cell;
@@ -122,17 +139,22 @@
             return @"Increment scheme";
         case 2:
             return @"Increment amount";
+        case 3:
+            return @"Feedback";
     }
     
     return nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    if (section == 1) {
-        return @"Fischer: players recieve the full increment.\nBronstein: players recieve the used portion of the increment.";
+    switch (section) {
+        case 1:
+            return @"Fischer: players recieve the full increment.\nBronstein: players recieve the used portion of the increment.";
+        case 2:
+            return @"Made by Tanner Bennett. Find me on Twitter at @ThePantsThief. I appreciate your purchase!";
+        default:
+            return nil;
     }
-    
-    return nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -140,7 +162,24 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
+}
+
+#pragma mark Feedback
+
+- (void)composeEmail {
+    NSString *body = [NSString stringWithFormat:@"%@, %@\n\n", [UIDevice currentDevice].model, [UIDevice currentDevice].systemVersion];
+    MFMailComposeViewController *mail = [MFMailComposeViewController new];
+    mail.mailComposeDelegate = self;
+    mail.view.tintColor = [UIColor colorWithRed:0.000 green:0.400 blue:1.000 alpha:1.000];
+    [mail setSubject:@"Checkmate Feedback"];
+    [mail setMessageBody:body isHTML:NO];
+    [mail setToRecipients:@[@"tannerbennett@icloud.com"]];
+    [self presentViewController:mail animated:YES completion:nil];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark Preference accessors

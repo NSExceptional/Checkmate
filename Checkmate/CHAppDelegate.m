@@ -11,6 +11,9 @@
 
 #import "CHSettingsViewController.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @implementation CHAppDelegate
 
@@ -29,6 +32,8 @@
     self.window.rootViewController = [CHPageViewController new];
     self.window.tintColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [Fabric with:@[[Crashlytics class]]];
     
     return YES;
 }
