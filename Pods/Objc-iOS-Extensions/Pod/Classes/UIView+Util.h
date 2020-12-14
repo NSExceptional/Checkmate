@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Tanner Bennett. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#define CGFloatRound(x) floor((x * 2.f)) / 2.f
+#define CGFloatRound(x) ({ CGFloat s = UIScreen.mainScreen.scale; floor((x * s)) / s; })
 typedef NS_ENUM(NSUInteger, CGFramePart) {
     CGFramePartX,
     CGFramePartY,
