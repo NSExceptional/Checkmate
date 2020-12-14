@@ -2,19 +2,23 @@ PODS:
   - Objc-Foundation-Extensions (0.1.0)
   - Objc-iOS-Extensions (0.1.0):
     - Objc-Foundation-Extensions
+  - TBAlertController (3.0.1)
 
 DEPENDENCIES:
   - Objc-iOS-Extensions (= 0.1.0)
+  - TBAlertController
 
 SPEC REPOS:
   trunk:
     - Objc-Foundation-Extensions
     - Objc-iOS-Extensions
+    - TBAlertController
 
 SPEC CHECKSUMS:
   Objc-Foundation-Extensions: 0e24d6a4b986d2398305f6b382c1031093f3ee5c
   Objc-iOS-Extensions: 2bec624d0576658fc751bbe260a111ae7e95eb76
+  TBAlertController: cadaec5909aa7af37f4a345fb260ce9b3b0ad0c6
 
-PODFILE CHECKSUM: dfc2f254a4c2003846477e1ff030db57e672f56a
+PODFILE CHECKSUM: fc03e7488e1f908feaa3c8ba00af3613c1a018f5
 
 COCOAPODS: 1.10.0
