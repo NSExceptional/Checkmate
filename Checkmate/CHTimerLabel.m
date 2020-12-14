@@ -25,7 +25,8 @@
 }
 
 + (UIFont *)desiredFontForTextStyle:(CHTimerTextStyle)style {
-    return [UIFont monospacedDigitSystemFontOfSize:[[self class] desiredFontSizeForTextStyle:style] weight:UIFontWeightUltraLight];
+    CGFloat pointSize = [[self class] desiredFontSizeForTextStyle:style];
+    return [UIFont monospacedDigitSystemFontOfSize:pointSize weight:UIFontWeightThin];
 }
 
 + (CGFloat)desiredFontSizeForTextStyle:(CHTimerTextStyle)style {

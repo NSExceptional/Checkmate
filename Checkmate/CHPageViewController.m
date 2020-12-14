@@ -94,7 +94,7 @@
 
 - (void)bounceTimerView {
     // active is reset to NO after force is applied
-    self.pushBehavior.pushDirection = CGVectorMake(0, -60);
+    self.pushBehavior.pushDirection = CGVectorMake(0, -100);
     self.pushBehavior.active = YES;
 }
 
@@ -102,7 +102,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     label.text = @"Swipe to reveal settings";
     label.textColor = [UIColor whiteColor];
-    label.font = [UIFont systemFontOfSize:27 weight:UIFontWeightLight];
+    label.font = [UIFont systemFontOfSize:27 weight:UIFontWeightRegular];
     label.alpha = 0;
     [label sizeToFit];
     label.center = self.view.center;
