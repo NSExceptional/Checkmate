@@ -21,6 +21,8 @@
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
+    
     // Initialize picker and set label colors
     _picker = [[CHTimeIntervalPicker alloc] initWithFrame:self.bounds];
     _picker.hourLabel.textColor   = [UIColor whiteColor];

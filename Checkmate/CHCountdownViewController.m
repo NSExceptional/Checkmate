@@ -279,9 +279,11 @@ static NSInteger kButtonPadding = 60;
 - (void)togglePlayPauseButton {
     UIButton *reveal, *remove;
     if (self.pauseButton.alpha == 1) {
-        reveal = self.playButton, remove = self.pauseButton;
+        reveal = self.playButton;
+        remove = self.pauseButton;
     } else {
-        reveal = self.pauseButton, remove = self.playButton;
+        reveal = self.pauseButton;
+        remove = self.playButton;
     }
     
     reveal.alpha = 0;
