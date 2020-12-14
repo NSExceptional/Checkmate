@@ -1,4 +1,5 @@
-pod 'FLEX'
-pod 'Objc-iOS-Extensions'
-pod 'Fabric'
-pod 'Crashlytics'
+platform :ios, '9.0'
+
+target 'Checkmate' do
+  pod 'Objc-iOS-Extensions' => '0.1.0'
+end

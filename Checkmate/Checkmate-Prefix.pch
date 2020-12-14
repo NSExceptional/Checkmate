@@ -6,7 +6,5 @@
 //  Copyright © 2016 Tanner Bennett. All rights reserved.
 //
 
-#import "FLEXManager.h"
 #import "Objc-iOS-Extensions.h"
-
 #import "Checkmate-Constants.h"
