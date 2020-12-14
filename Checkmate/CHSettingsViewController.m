@@ -151,7 +151,7 @@
         case 1:
             return @"Fischer: players recieve the full increment.\nBronstein: players recieve the used portion of the increment.";
         case 2:
-            return @"Made by Tanner Bennett. Find me on Twitter at @ThePantsThief. I appreciate your purchase!";
+            return @"Made by Tanner Bennett. Find me on Twitter at @NSExceptional. I appreciate your purchase!";
         default:
             return nil;
     }
