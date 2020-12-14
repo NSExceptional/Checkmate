@@ -9,6 +9,7 @@
 #import "CHSettingsViewController.h"
 #import "CHPickerCell.h"
 #import "UIPickerView+SeparatorLines.h"
+#import "TBAlertController.h"
 #import <MessageUI/MessageUI.h>
 
 
@@ -170,12 +171,20 @@
 - (void)composeEmail {
     NSString *body = [NSString stringWithFormat:@"%@, %@\n\n", [UIDevice currentDevice].model, [UIDevice currentDevice].systemVersion];
     MFMailComposeViewController *mail = [MFMailComposeViewController new];
-    mail.mailComposeDelegate = self;
-    mail.view.tintColor = [UIColor colorWithRed:0.000 green:0.400 blue:1.000 alpha:1.000];
-    [mail setSubject:@"Checkmate Feedback"];
-    [mail setMessageBody:body isHTML:NO];
-    [mail setToRecipients:@[@"tannerbennett@icloud.com"]];
-    [self presentViewController:mail animated:YES completion:nil];
+    if (mail) {
+        mail.mailComposeDelegate = self;
+        mail.view.tintColor = [UIColor colorWithRed:0.000 green:0.400 blue:1.000 alpha:1.000];
+        [mail setSubject:@"Checkmate Feedback"];
+        [mail setMessageBody:body isHTML:NO];
+        [mail setToRecipients:@[@"tannerbennett@icloud.com"]];
+        [self presentViewController:mail animated:YES completion:nil];
+    } else {
+        TBAlertController *alert = [TBAlertController
+            simpleOKAlertWithTitle:@"Cannot send Email"
+            message:@"Configure an email account in the Settings app."
+        ];
+        [alert showFromViewController:self];
+    }
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
