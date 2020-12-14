@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Tanner Bennett. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_INLINE CGRect CGRectScaleRect(CGRect r, CGFloat scale) {
     return CGRectMake(r.origin.x * scale,

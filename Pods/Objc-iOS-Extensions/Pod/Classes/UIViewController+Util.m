@@ -24,20 +24,4 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)launchLinkInBrowser:(NSString *)urlString {
-    NSURL *url;
-    if ([urlString isKindOfClass:[NSURL class]]) {
-        url = (id)urlString;
-    } else  {
-        url = [NSURL URLWithString:urlString];
-    }
-    
-    if ([SFSafariViewController class]) {
-        id browser = [[SFSafariViewController alloc] initWithURL:url];
-        [self presentViewController:browser animated:YES completion:nil];
-    } else {
-        [[UIApplication sharedApplication] openURL:url];
-    }
-}
-
 @end

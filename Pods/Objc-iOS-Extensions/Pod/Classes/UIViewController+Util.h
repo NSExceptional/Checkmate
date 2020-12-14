@@ -13,6 +13,5 @@
 @property (nonatomic, readonly) UIViewController *topmostViewController;
 
 - (void)dismissAnimated;
-- (void)launchLinkInBrowser:(NSString *)urlString;
 
 @end
