@@ -7,65 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02C6B03123AA6A85945B368759F710E8 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF4D7B1B8010C84A94C1E5658F855B /* UIImage+Util.m */; };
 		03C29299BBC753AC45F8B405716838C9 /* NSArray+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E296E15C15C473397734286BFE385E /* NSArray+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0420F1171756F15A7A069556325F0465 /* NSObject+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C02399C349FB9340E911791EC560882 /* NSObject+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		066D9EB5A5F628F8CCA87B32B166F5B2 /* UIImage+Effects.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A85CB8E06A70E65C15A1A915D87FED /* UIImage+Effects.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0B71229333268B5237396165F1A113FA /* Objc-iOS-Extensions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B2F1F68221B68FAF6C80CAEF761F0E /* Objc-iOS-Extensions-dummy.m */; };
+		0D34C9F2CADCC7AADB62C1668BED4AF0 /* UILabel+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C3327D436A63D66A6ACFDD5822D36 /* UILabel+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0D4C55B0404758269984CCB6C2D3B10B /* NSIndexSet+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEDE16E844C801048AC655B4C6B6F2C /* NSIndexSet+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0E5536A35B35DDAF0C5B052A240E65C7 /* UILabel+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 61980D99506174DF22381D5CBB80F06F /* UILabel+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		13FFFECCB2C0E50CF345F9B1D8D99DAF /* NSString+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 510CEEE487DE231FA9E55B262FB87297 /* NSString+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1873ED0D0585B1804DA1A6F243D597EC /* NSData+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E35063AD1FBC7C17F577025BA21C /* NSData+Util.m */; };
 		1B40A27583E083A9101B0CF42B4AD3BD /* UIView+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = EA389DDE48394363530EA9F033A90D4F /* UIView+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1EE7236EA73C9089CB68428D2C1EFB0E /* UITableView+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A10DEED6501B1C82E717EEC1BC4851C /* UITableView+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		23735971E488460790CB1CF04A138871 /* NSArray+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA087E8FAA0368BC22C5989B4C123E /* NSArray+Util.m */; };
-		2BCF1C1DB083507251B452EEA15815F7 /* UIImage+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690F23F0506107BF62427E3D1572EF8 /* UIImage+Filter.m */; };
-		2FD67CEEAC7A7099B35074C888C1BCFF /* TBAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 150375855A63E82531B9B1706C9ED562 /* TBAlertAction.m */; };
-		4273D33DA6410C84DDCDB228574858EE /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00D47D4296D79A11E0AFA4DCEC58BD /* NSDate-Utilities.m */; };
-		44210AC1A0686EDC94353275831C5F80 /* UIVisualEffectView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E2278325BE5A5987E2C536EC5F7074 /* UIVisualEffectView+Util.m */; };
-		467E7F0AB364F3D7FC89BAF33FB7B178 /* UIWindow+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FA410BF3CC070AB8CE90355FEE4F1D /* UIWindow+Util.m */; };
+		22135F057E770266360EB9D59E3C8118 /* TBAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DFAF2AB6F63117D8738F67204A42CD /* TBAlertController-dummy.m */; };
+		333CC9789E2C8C3E3B1FF66FCD7F62CF /* UIImage+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690F23F0506107BF62427E3D1572EF8 /* UIImage+Filter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		35E773944D62041D35743D93812ECE86 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1016013BF20A110A78840E2B7A82883C /* NSString+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3671DDC1563B89B6742355A30890DAC5 /* NSIndexPath+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EB903346E791247E17950C1ADC2EF6 /* NSIndexPath+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		442EF4DC2C5FFAB3EBB4927D7C85FEA7 /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE010C6480ED841DC71F6768449C4EF /* UIImageView+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4A12A6B8DC120794123D6E408C408F1C /* CGRect+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = FCCE40A926C7BBFDC914F44B43F26585 /* CGRect+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4B4A29E0F146BDCE64859DDAFE76A252 /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE010C6480ED841DC71F6768449C4EF /* UIImageView+Util.m */; };
-		4B7E2B395062530026F04E2DBD0ABB0A /* UILabel+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C3327D436A63D66A6ACFDD5822D36 /* UILabel+Util.m */; };
 		4BEB10C6B46B1AB1089CD0195F7A7381 /* UINavigationController+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = B98571EC1525FFB25FC998E82EB69CD6 /* UINavigationController+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		50511127CD9E9DB94E64117E73B852E3 /* UIImageView+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 6853677DC2A121B52DC319E0EDAC12FC /* UIImageView+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		53D4B99A169A81F8ECF37DE2245350DA /* UISearchBar+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DC4917044C71F5F3BCAE5F1983DEA3 /* UISearchBar+Util.m */; };
-		56E09DB65B15C234132A4D2BEE61DBFA /* TBAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DFAF2AB6F63117D8738F67204A42CD /* TBAlertController-dummy.m */; };
+		517917D350399B0136C69BE790313C68 /* UINavigationController+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E24AF974F43D5A2193E3B62B7769621 /* UINavigationController+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		51DD64DA925C283BF99F9EA038124836 /* UIImage+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = F053F9943354E06248630A71B0E3900A /* UIImage+Effects.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		559766102D0C4A86B142D95742EF7465 /* UIImageView+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 572C97573E4E197AABA0FC0067DCF002 /* UIImageView+Filter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5CA3AF50A4629FBA378802B92CCF75B4 /* UIViewController+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = BC1DF968D17339AB192F701ABEDBD868 /* UIViewController+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5D18E50F667F36F3C4429D49F1A99723 /* UIImage+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = F053F9943354E06248630A71B0E3900A /* UIImage+Effects.m */; };
-		5D83514F71EC9C3336C1119FB024DA60 /* Objc-iOS-Extensions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B2F1F68221B68FAF6C80CAEF761F0E /* Objc-iOS-Extensions-dummy.m */; };
 		6490E792EC81E389A21142F508188493 /* NSIndexPath+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39126DFBB559E68C53D3ADE32A8B37 /* NSIndexPath+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		64F5A1C0800F50B46CB624CD77983B9A /* NSIndexSet+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEDE16E844C801048AC655B4C6B6F2C /* NSIndexSet+Util.m */; };
 		68647CEB909284F67B306DF4674755CB /* NSAttributedString+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EA19FFE86AD78736FEFCC10CBFAEBF4 /* NSAttributedString+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		69BCAFB152D42449BBA565058804CB1A /* UIImageView+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 572C97573E4E197AABA0FC0067DCF002 /* UIImageView+Filter.m */; };
+		70245863E608C2D0EE28833579C7C73D /* NSData+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E35063AD1FBC7C17F577025BA21C /* NSData+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		73CA32538CDFBF9A73C4701A50A85D8E /* TBAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = FC29353741C56F85F8DF081582046187 /* TBAlertController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		73D3146289B677C718BB9E336BE368A5 /* NSDate-Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE3741FFC7F26C58B400A23E0B5D09E /* NSDate-Utilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		73F1FEA25C4C3BA502AA3056827DB14F /* NSIndexPath+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EB903346E791247E17950C1ADC2EF6 /* NSIndexPath+Util.m */; };
 		746AE9F6D62E0784F0C0FF9F82A84EDC /* UIWindow+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 524A2B0A2CC0C4DB847A6887DC912B08 /* UIWindow+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7916E2F9644B2E1CDB2D09F9DBD11213 /* UIVisualEffectView+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 99DC05D0830CD01AFE6E5D0E614D02C5 /* UIVisualEffectView+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7CD64F46E400646C3233BBEB5791845C /* UISearchBar+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DC4917044C71F5F3BCAE5F1983DEA3 /* UISearchBar+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		82F075A5F7E5203EDFD49714805FC763 /* UIViewController+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2BA137308E3A88A8F937FB5C85BEFB /* UIViewController+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		83F0B62E0F7354854D2A8BE11F3710F4 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF4D7B1B8010C84A94C1E5658F855B /* UIImage+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8415C571198FF540008794FAE9244201 /* NSDictionary+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D5E28E47946433809E58933A183FB8C /* NSDictionary+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		855670280DAA76FA6B67571C47D1E800 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1016013BF20A110A78840E2B7A82883C /* NSString+Util.m */; };
-		8DC23953616362D859C59F45CA59915C /* UIPasteboard+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 020B0BD3D9FE0D8B56456A7532D452FF /* UIPasteboard+Util.m */; };
 		8DF98EA663200B092EB1B2292CDABB0F /* UIApplication+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 3924622B40613028C5FFC50AA054CE77 /* UIApplication+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8F5D22130C2ED3B83464C8C7E7C2D2D2 /* UISearchBar+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 291D033C5A0E2B50DBEB70F2B2CEEC77 /* UISearchBar+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9F9C3D5FA855EA639F26BB7E5F8ED4FA /* TBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB81E941DE218657D1050EEA5633FD /* TBAlertController.m */; };
+		9519F05680E4F2E63A09B9EE5B515D6D /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00D47D4296D79A11E0AFA4DCEC58BD /* NSDate-Utilities.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9DB2086D7346DFD0821B7226E7649331 /* TBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB81E941DE218657D1050EEA5633FD /* TBAlertController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A685639A7A2D47FEDF8314AAB031246E /* UIPasteboard+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3107EE62F59DC77ED7E15AE255CC1F /* UIPasteboard+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A8364C94445F8EE31E5321914FE13A50 /* Objc-Foundation-Extensions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BD232025929F8304E916CE957085 /* Objc-Foundation-Extensions-dummy.m */; };
 		AE408068732FC9B82828A24EDF233E48 /* NSRange+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FB6C5B79F7E8739E9BCA7B6B0A3ED3 /* NSRange+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AF4760EEDDC85C2B8D753D40D435B2EF /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BCB9110FA13BD09A0A35DE1ECDEB4C /* UIView+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B20E53F79EC354AE52382A0F7CA76D36 /* NSData+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 0332F89A9C0EE58E7D84C5F1D8981E04 /* NSData+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B302B26E6AEAF0A97571BA722507847A /* UITableView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1F6CBFDA3908FB1810768BE41D912 /* UITableView+Util.m */; };
-		B3AC7FA395777448317F01C945E0FADC /* Objc-Foundation-Extensions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BD232025929F8304E916CE957085 /* Objc-Foundation-Extensions-dummy.m */; };
-		CA80EE02BB3D8F64DD4472785361B7C2 /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BCB9110FA13BD09A0A35DE1ECDEB4C /* UIView+Util.m */; };
+		B715331E7155A25EF8FF62B2048C7893 /* NSDictionary+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 51014A45D62B5307E0A97FE1227AAA48 /* NSDictionary+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B897CB2C7139862A578949429015BFA2 /* UITableView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1F6CBFDA3908FB1810768BE41D912 /* UITableView+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B90BE9BC1E78D8F9D4B71B87238F61E3 /* TBAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 150375855A63E82531B9B1706C9ED562 /* TBAlertAction.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BF62B891E8B3D0689B69708540C993AC /* UIPasteboard+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 020B0BD3D9FE0D8B56456A7532D452FF /* UIPasteboard+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C0BD972BF9418C1BB43EFF0C9255A8A2 /* NSAttributedString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DD8B73F68E48AF375E48452731707E /* NSAttributedString+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C481AB1CAE7C5847CC1CC0743D490BEB /* UIVisualEffectView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E2278325BE5A5987E2C536EC5F7074 /* UIVisualEffectView+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CB72D32190F579C9E218E9A7817DF7EA /* TBAlertAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFF6774892877FA139D4E45B9FCE9C5 /* TBAlertAction.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CE8AC5B3F7706284AF4835E95EAD2706 /* UIImage+Filter.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C2DDBB5D091525330502521EDA45C6 /* UIImage+Filter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D12BAB4250A7DC48D29F3C7510FAD348 /* NSIndexSet+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 17DF73E0191BEA930A85C84F20CE1D34 /* NSIndexSet+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D3A37F1433B9C5E019CD837C4CB6BA18 /* UISwitch+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 1675717F27C96074F9F6D53195CA5632 /* UISwitch+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DDA7F3F610A0024D93C88D89FF18A314 /* NSDictionary+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 51014A45D62B5307E0A97FE1227AAA48 /* NSDictionary+Util.m */; };
-		DEE0640E28FB15929BB37108440473C4 /* UIViewController+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2BA137308E3A88A8F937FB5C85BEFB /* UIViewController+Util.m */; };
+		DECA3FFB01580901D6622E9C361FE2AF /* NSArray+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA087E8FAA0368BC22C5989B4C123E /* NSArray+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DF8588F5B11673C4074FD993FDF54932 /* Objc-iOS-Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EAB94C5AB7661C1E75C0A8ED1882D7D /* Objc-iOS-Extensions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E2EFA793D0A9F41DFCAED059B475B029 /* UISwitch+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 016E740004C70A88D6DF4CAAD62C8DBF /* UISwitch+Util.m */; };
+		E059040298AFEF62C31B5C26AEA32ACB /* UISwitch+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 016E740004C70A88D6DF4CAAD62C8DBF /* UISwitch+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E63690DF234E6F4FEB0837359DEE1EC8 /* UIImage+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBFD411BBE0EC0F6DA7BFAF71DF0147 /* UIImage+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EBBE3658D5EB5ABAC525CF64691482E4 /* UINavigationController+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E24AF974F43D5A2193E3B62B7769621 /* UINavigationController+Util.m */; };
-		F0F1DCEB7EDB50633FD56B3722C42416 /* NSAttributedString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DD8B73F68E48AF375E48452731707E /* NSAttributedString+Util.m */; };
+		F1CA0C52EA89F2976BACB1B7177E6BF3 /* UIWindow+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FA410BF3CC070AB8CE90355FEE4F1D /* UIWindow+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F84A307BA652AD8CF9F257B25C996B9A /* UIApplication+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583CA231F6B4F2EFC33CCCCF1E023E6 /* UIApplication+Util.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F8BAC801163A6496EB3E3E3514A1D77A /* CGSize+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E6CC2E4C2D8981F1A8DFB0B0A1A8A19 /* CGSize+Util.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FAC76CC550E59BB7DF4E9C7B803DD144 /* UIApplication+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583CA231F6B4F2EFC33CCCCF1E023E6 /* UIApplication+Util.m */; };
 		FCAF407D6EE8DE0DB1B60ECCC08108A3 /* Pods-Checkmate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC104D5A4F5CA94C224CBD5D9DB0B5 /* Pods-Checkmate-dummy.m */; };
 		FEDAEAF6621EAA4D6E6974522F68241F /* UIImageView+Filter.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD06193926839A2C238460F4B330894 /* UIImageView+Filter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
@@ -109,7 +109,7 @@
 		0332F89A9C0EE58E7D84C5F1D8981E04 /* NSData+Util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+Util.h"; path = "Pod/Classes/NSData+Util.h"; sourceTree = "<group>"; };
 		0A9C9187B4BF19EA151E1455426EF0F2 /* Objc-iOS-Extensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Objc-iOS-Extensions.release.xcconfig"; sourceTree = "<group>"; };
 		0E297AC73E34BDF0F17E75A77E5B1E58 /* TBAlertController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TBAlertController.debug.xcconfig; sourceTree = "<group>"; };
-		0E51A63FB69F11A86542E3C888053321 /* libTBAlertController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTBAlertController.a; path = libTBAlertController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E51A63FB69F11A86542E3C888053321 /* libTBAlertController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTBAlertController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1016013BF20A110A78840E2B7A82883C /* NSString+Util.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Util.m"; path = "Pod/Classes/NSString+Util.m"; sourceTree = "<group>"; };
 		150375855A63E82531B9B1706C9ED562 /* TBAlertAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TBAlertAction.m; path = Classes/TBAlertAction.m; sourceTree = "<group>"; };
 		1675717F27C96074F9F6D53195CA5632 /* UISwitch+Util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISwitch+Util.h"; path = "Pod/Classes/UISwitch+Util.h"; sourceTree = "<group>"; };
@@ -153,18 +153,18 @@
 		930576F018CC3EB751DAB4828F6149D6 /* Objc-Foundation-Extensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Objc-Foundation-Extensions.debug.xcconfig"; sourceTree = "<group>"; };
 		938C170ECA3AA968DCB3C053ACDB594F /* Objc-iOS-Extensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Objc-iOS-Extensions.debug.xcconfig"; sourceTree = "<group>"; };
 		93DB81E941DE218657D1050EEA5633FD /* TBAlertController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TBAlertController.m; path = Classes/TBAlertController.m; sourceTree = "<group>"; };
-		945A614B430FB5426939B79639AFEDB9 /* libObjc-Foundation-Extensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libObjc-Foundation-Extensions.a"; path = "libObjc-Foundation-Extensions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		945A614B430FB5426939B79639AFEDB9 /* libObjc-Foundation-Extensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libObjc-Foundation-Extensions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9583CA231F6B4F2EFC33CCCCF1E023E6 /* UIApplication+Util.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+Util.m"; path = "Pod/Classes/UIApplication+Util.m"; sourceTree = "<group>"; };
 		99DC05D0830CD01AFE6E5D0E614D02C5 /* UIVisualEffectView+Util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIVisualEffectView+Util.h"; path = "Pod/Classes/UIVisualEffectView+Util.h"; sourceTree = "<group>"; };
 		9C02399C349FB9340E911791EC560882 /* NSObject+Util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Util.h"; path = "Pod/Classes/NSObject+Util.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0EE57181A1165F75A897D1DC8447EA7 /* libPods-Checkmate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Checkmate.a"; path = "libPods-Checkmate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0EE57181A1165F75A897D1DC8447EA7 /* libPods-Checkmate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Checkmate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65E22C36E311B81CF67F7507DA7EF85 /* Pods-Checkmate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Checkmate.debug.xcconfig"; sourceTree = "<group>"; };
 		ABE3741FFC7F26C58B400A23E0B5D09E /* NSDate-Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate-Utilities.h"; path = "Pod/Classes/NSDate-Utilities.h"; sourceTree = "<group>"; };
 		B8AC104D5A4F5CA94C224CBD5D9DB0B5 /* Pods-Checkmate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Checkmate-dummy.m"; sourceTree = "<group>"; };
 		B98571EC1525FFB25FC998E82EB69CD6 /* UINavigationController+Util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Util.h"; path = "Pod/Classes/UINavigationController+Util.h"; sourceTree = "<group>"; };
 		BC1DF968D17339AB192F701ABEDBD868 /* UIViewController+Util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Util.h"; path = "Pod/Classes/UIViewController+Util.h"; sourceTree = "<group>"; };
-		BF73414BD29D56E6BE3378119BEB050C /* libObjc-iOS-Extensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libObjc-iOS-Extensions.a"; path = "libObjc-iOS-Extensions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF73414BD29D56E6BE3378119BEB050C /* libObjc-iOS-Extensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libObjc-iOS-Extensions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEDE16E844C801048AC655B4C6B6F2C /* NSIndexSet+Util.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSIndexSet+Util.m"; path = "Pod/Classes/NSIndexSet+Util.m"; sourceTree = "<group>"; };
 		C173713A35DD7B4C7DC1429681F303BD /* Objc-Foundation-Extensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Objc-Foundation-Extensions.release.xcconfig"; sourceTree = "<group>"; };
 		C535DB0163642341E9F806600B0B4346 /* Objc-iOS-Extensions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Objc-iOS-Extensions-prefix.pch"; sourceTree = "<group>"; };
@@ -224,7 +224,6 @@
 				93DB81E941DE218657D1050EEA5633FD /* TBAlertController.m */,
 				9F730BDF34B17BEAB9F9933DF13C319E /* Support Files */,
 			);
-			name = TBAlertController;
 			path = TBAlertController;
 			sourceTree = "<group>";
 		};
@@ -319,7 +318,6 @@
 				D6FA410BF3CC070AB8CE90355FEE4F1D /* UIWindow+Util.m */,
 				2AAC60A7C7D452C0992ADA1B6108C94A /* Support Files */,
 			);
-			name = "Objc-iOS-Extensions";
 			path = "Objc-iOS-Extensions";
 			sourceTree = "<group>";
 		};
@@ -344,7 +342,6 @@
 				1016013BF20A110A78840E2B7A82883C /* NSString+Util.m */,
 				308D91B2DF55B3787A0FD83208F36F22 /* Support Files */,
 			);
-			name = "Objc-Foundation-Extensions";
 			path = "Objc-Foundation-Extensions";
 			sourceTree = "<group>";
 		};
@@ -465,7 +462,7 @@
 			buildConfigurationList = AE036A8A3177403C5B62F328450A5CFD /* Build configuration list for PBXNativeTarget "Objc-Foundation-Extensions" */;
 			buildPhases = (
 				BC95CE358E62DA538128239C1D221D56 /* Headers */,
-				AB15804B5334DBEEE08EAF742C3BB8A4 /* Sources */,
+				8BD10617F50DAC01D64219D4739BCCA6 /* Sources */,
 				1A948B399810FADEA005E5F8ADC0A7EE /* Frameworks */,
 			);
 			buildRules = (
@@ -502,7 +499,7 @@
 			buildConfigurationList = BB2492ECC3C85A6AE000B7D25364324F /* Build configuration list for PBXNativeTarget "Objc-iOS-Extensions" */;
 			buildPhases = (
 				01611A323B837707D7D10E27D1B50DD1 /* Headers */,
-				11EA71327A3D19D2B6B09A15493A61E2 /* Sources */,
+				2A282FFF32E708A5DDD8856378BB7019 /* Sources */,
 				5808E6FAF3FD98EA9FE1ECA7EB63D21F /* Frameworks */,
 			);
 			buildRules = (
@@ -520,7 +517,7 @@
 			buildConfigurationList = AF2E91C43A9C4A96FEB49E2802FB56EE /* Build configuration list for PBXNativeTarget "TBAlertController" */;
 			buildPhases = (
 				8FBBBD945FE180A1CA3B24E1C78B04D1 /* Headers */,
-				53C2037C0FD31F7CC2DAFF6814CD3A0E /* Sources */,
+				3C63C7C8C64A0F5DDC1FFE343D562C81 /* Sources */,
 				3C4E59446FF73BE033F0BC425415441C /* Frameworks */,
 			);
 			buildRules = (
@@ -539,7 +536,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1230;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -563,31 +560,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		11EA71327A3D19D2B6B09A15493A61E2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0F1DCEB7EDB50633FD56B3722C42416 /* NSAttributedString+Util.m in Sources */,
-				5D83514F71EC9C3336C1119FB024DA60 /* Objc-iOS-Extensions-dummy.m in Sources */,
-				FAC76CC550E59BB7DF4E9C7B803DD144 /* UIApplication+Util.m in Sources */,
-				5D18E50F667F36F3C4429D49F1A99723 /* UIImage+Effects.m in Sources */,
-				2BCF1C1DB083507251B452EEA15815F7 /* UIImage+Filter.m in Sources */,
-				02C6B03123AA6A85945B368759F710E8 /* UIImage+Util.m in Sources */,
-				69BCAFB152D42449BBA565058804CB1A /* UIImageView+Filter.m in Sources */,
-				4B4A29E0F146BDCE64859DDAFE76A252 /* UIImageView+Util.m in Sources */,
-				4B7E2B395062530026F04E2DBD0ABB0A /* UILabel+Util.m in Sources */,
-				EBBE3658D5EB5ABAC525CF64691482E4 /* UINavigationController+Util.m in Sources */,
-				8DC23953616362D859C59F45CA59915C /* UIPasteboard+Util.m in Sources */,
-				53D4B99A169A81F8ECF37DE2245350DA /* UISearchBar+Util.m in Sources */,
-				E2EFA793D0A9F41DFCAED059B475B029 /* UISwitch+Util.m in Sources */,
-				B302B26E6AEAF0A97571BA722507847A /* UITableView+Util.m in Sources */,
-				CA80EE02BB3D8F64DD4472785361B7C2 /* UIView+Util.m in Sources */,
-				DEE0640E28FB15929BB37108440473C4 /* UIViewController+Util.m in Sources */,
-				44210AC1A0686EDC94353275831C5F80 /* UIVisualEffectView+Util.m in Sources */,
-				467E7F0AB364F3D7FC89BAF33FB7B178 /* UIWindow+Util.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		26C26DC15904C857840CE664F17B84B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,28 +568,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53C2037C0FD31F7CC2DAFF6814CD3A0E /* Sources */ = {
+		2A282FFF32E708A5DDD8856378BB7019 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FD67CEEAC7A7099B35074C888C1BCFF /* TBAlertAction.m in Sources */,
-				56E09DB65B15C234132A4D2BEE61DBFA /* TBAlertController-dummy.m in Sources */,
-				9F9C3D5FA855EA639F26BB7E5F8ED4FA /* TBAlertController.m in Sources */,
+				C0BD972BF9418C1BB43EFF0C9255A8A2 /* NSAttributedString+Util.m in Sources */,
+				0B71229333268B5237396165F1A113FA /* Objc-iOS-Extensions-dummy.m in Sources */,
+				F84A307BA652AD8CF9F257B25C996B9A /* UIApplication+Util.m in Sources */,
+				51DD64DA925C283BF99F9EA038124836 /* UIImage+Effects.m in Sources */,
+				333CC9789E2C8C3E3B1FF66FCD7F62CF /* UIImage+Filter.m in Sources */,
+				83F0B62E0F7354854D2A8BE11F3710F4 /* UIImage+Util.m in Sources */,
+				559766102D0C4A86B142D95742EF7465 /* UIImageView+Filter.m in Sources */,
+				442EF4DC2C5FFAB3EBB4927D7C85FEA7 /* UIImageView+Util.m in Sources */,
+				0D34C9F2CADCC7AADB62C1668BED4AF0 /* UILabel+Util.m in Sources */,
+				517917D350399B0136C69BE790313C68 /* UINavigationController+Util.m in Sources */,
+				BF62B891E8B3D0689B69708540C993AC /* UIPasteboard+Util.m in Sources */,
+				7CD64F46E400646C3233BBEB5791845C /* UISearchBar+Util.m in Sources */,
+				E059040298AFEF62C31B5C26AEA32ACB /* UISwitch+Util.m in Sources */,
+				B897CB2C7139862A578949429015BFA2 /* UITableView+Util.m in Sources */,
+				AF4760EEDDC85C2B8D753D40D435B2EF /* UIView+Util.m in Sources */,
+				82F075A5F7E5203EDFD49714805FC763 /* UIViewController+Util.m in Sources */,
+				C481AB1CAE7C5847CC1CC0743D490BEB /* UIVisualEffectView+Util.m in Sources */,
+				F1CA0C52EA89F2976BACB1B7177E6BF3 /* UIWindow+Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB15804B5334DBEEE08EAF742C3BB8A4 /* Sources */ = {
+		3C63C7C8C64A0F5DDC1FFE343D562C81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23735971E488460790CB1CF04A138871 /* NSArray+Util.m in Sources */,
-				1873ED0D0585B1804DA1A6F243D597EC /* NSData+Util.m in Sources */,
-				4273D33DA6410C84DDCDB228574858EE /* NSDate-Utilities.m in Sources */,
-				DDA7F3F610A0024D93C88D89FF18A314 /* NSDictionary+Util.m in Sources */,
-				73F1FEA25C4C3BA502AA3056827DB14F /* NSIndexPath+Util.m in Sources */,
-				64F5A1C0800F50B46CB624CD77983B9A /* NSIndexSet+Util.m in Sources */,
-				855670280DAA76FA6B67571C47D1E800 /* NSString+Util.m in Sources */,
-				B3AC7FA395777448317F01C945E0FADC /* Objc-Foundation-Extensions-dummy.m in Sources */,
+				B90BE9BC1E78D8F9D4B71B87238F61E3 /* TBAlertAction.m in Sources */,
+				22135F057E770266360EB9D59E3C8118 /* TBAlertController-dummy.m in Sources */,
+				9DB2086D7346DFD0821B7226E7649331 /* TBAlertController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BD10617F50DAC01D64219D4739BCCA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECA3FFB01580901D6622E9C361FE2AF /* NSArray+Util.m in Sources */,
+				70245863E608C2D0EE28833579C7C73D /* NSData+Util.m in Sources */,
+				9519F05680E4F2E63A09B9EE5B515D6D /* NSDate-Utilities.m in Sources */,
+				B715331E7155A25EF8FF62B2048C7893 /* NSDictionary+Util.m in Sources */,
+				3671DDC1563B89B6742355A30890DAC5 /* NSIndexPath+Util.m in Sources */,
+				0D4C55B0404758269984CCB6C2D3B10B /* NSIndexSet+Util.m in Sources */,
+				35E773944D62041D35743D93812ECE86 /* NSString+Util.m in Sources */,
+				A8364C94445F8EE31E5321914FE13A50 /* Objc-Foundation-Extensions-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,7 +722,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -746,7 +743,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Objc-iOS-Extensions/Objc-iOS-Extensions-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -769,7 +766,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Objc-iOS-Extensions/Objc-iOS-Extensions-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -791,7 +788,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Objc-Foundation-Extensions/Objc-Foundation-Extensions-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -813,7 +810,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TBAlertController/TBAlertController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -836,7 +833,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Objc-Foundation-Extensions/Objc-Foundation-Extensions-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -906,8 +903,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -921,7 +917,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TBAlertController/TBAlertController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -943,7 +939,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
