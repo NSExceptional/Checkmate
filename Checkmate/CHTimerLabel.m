@@ -7,6 +7,7 @@
 //
 
 #import "CHTimerLabel.h"
+#import "UIColor+DarkModeShim.h"
 
 
 @implementation CHTimerLabel
@@ -17,7 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.font = [[self class] desiredFontForTextStyle:CHTimerTextStyleDefault];
-        self.textColor = [UIColor whiteColor];
+        self.textColor = CHColor.primaryTextColor;
         self.textAlignment = NSTextAlignmentLeft;
     }
     

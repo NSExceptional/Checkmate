@@ -8,7 +8,8 @@
 
 #import "CHCountdownViewController.h"
 #import "UIView+Util.h"
-
+#import "UIColor+DarkModeShim.h"
+#import "UIImage+Util.h"
 
 static NSInteger kButtonPadding = 60;
 
@@ -35,7 +36,7 @@ static NSInteger kButtonPadding = 60;
 - (void)loadView {
     [super loadView];
     
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = CHColor.primaryBackgroundColor;
     
     CGFloat width  = CGRectGetWidth(self.view.frame);
     CGFloat height = CGRectGetHeight(self.view.frame);
@@ -52,8 +53,8 @@ static NSInteger kButtonPadding = 60;
     _timerA.view.frame = tapUpright;
     _timerB.view.frame = tapUpsideDown;
     _timerB.view.transform = CGAffineTransformMakeRotation(M_PI);
-    _timerA.view.backgroundColor = [UIColor blackColor];
-    _timerB.view.backgroundColor = [UIColor blackColor];
+    _timerA.view.backgroundColor = CHColor.primaryBackgroundColor;
+    _timerB.view.backgroundColor = CHColor.primaryBackgroundColor;
     
     [self.view addSubview:_timerA.view];
     [self.view addSubview:_timerB.view];
@@ -70,9 +71,11 @@ static NSInteger kButtonPadding = 60;
     [_pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     [_playButton  setBackgroundImage:[UIImage imageNamed:@"play"]  forState:UIControlStateNormal];
     [_resetButton setBackgroundImage:[UIImage imageNamed:@"reset"] forState:UIControlStateNormal];
-    [_pauseButton sizeToFit];
-    [_playButton sizeToFit];
-    [_resetButton sizeToFit];
+    
+    for (UIButton *button in @[_pauseButton, _playButton, _resetButton]) {
+        button.tintColor = CHColor.primaryTextColor;
+        [button sizeToFit];
+    }
 }
 
 - (void)viewDidLoad {

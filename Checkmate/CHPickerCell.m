@@ -7,7 +7,8 @@
 //
 
 #import "CHPickerCell.h"
-
+#import "UIColor+DarkModeShim.h"
+#import "UIPickerView+SeparatorLines.h"
 
 @implementation CHPickerCell
 
@@ -25,9 +26,9 @@
     
     // Initialize picker and set label colors
     _picker = [[CHTimeIntervalPicker alloc] initWithFrame:self.bounds];
-    _picker.hourLabel.textColor   = [UIColor whiteColor];
-    _picker.minuteLabel.textColor = [UIColor whiteColor];
-    _picker.secondLabel.textColor = [UIColor whiteColor];
+    _picker.hourLabel.textColor   = CHColor.primaryTextColor;
+    _picker.minuteLabel.textColor = CHColor.primaryTextColor;
+    _picker.secondLabel.textColor = CHColor.primaryTextColor;
     [self.contentView addSubview:_picker];
     
     // Set picker values
@@ -35,6 +36,14 @@
         _picker.timeInterval = [[NSUserDefaults standardUserDefaults] doubleForKey:kPref_TimerTime];
     } else {
         _picker.timeInterval = [[NSUserDefaults standardUserDefaults] doubleForKey:kPref_TimerIncrement];
+    }
+}
+
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    
+    if (!@available(iOS 13.0, *)) {
+        _picker.pickerView.magnifierLineColor = CHColor.hairlineColor;
     }
 }
 

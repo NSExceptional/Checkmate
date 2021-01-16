@@ -7,6 +7,7 @@
 //
 
 #import "CHTimeIntervalPicker.h"
+#import "UIColor+DarkModeShim.h"
 
 
 #define CHSecondsToSeconds(x) (((NSInteger)x % 3600) % 60)
@@ -256,7 +257,7 @@ static CGFloat const labelSpacing = 5;
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         label.font = self.font;
-        label.textColor = [UIColor whiteColor];
+        label.textColor = CHColor.primaryTextColor;
         label.textAlignment = NSTextAlignmentRight;
         label.adjustsFontSizeToFitWidth = NO;
         label.frame = CGRectMake(0, 0, self.numberWidth, size.height);

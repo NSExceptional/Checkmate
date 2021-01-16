@@ -12,7 +12,8 @@
 /// Used to change the color of the separator lines in a UIPickerView.
 @interface UIPickerView (SeparatorLines)
 
-@property (nonatomic, readonly) UIView *bottomLineView_;
-@property (nonatomic, readonly) UIView *topLineView_;
+//@property (nonatomic, readonly) UIView *bottomLineView_;
+//@property (nonatomic, readonly) UIView *topLineView_;
+@property (nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "CHTimerView.h"
+#import "UIColor+DarkModeShim.h"
 
 
 @implementation CHTimerView
@@ -20,7 +21,7 @@
         
         _activeIndicatorLine = ({
             UIView *view         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 3)];
-            view.backgroundColor = [UIColor whiteColor];
+            view.backgroundColor = CHColor.primaryBackgroundColor;
             view.center          = self.center;
             [view setFrameY:CGRectGetHeight(frame)-60];
             view;

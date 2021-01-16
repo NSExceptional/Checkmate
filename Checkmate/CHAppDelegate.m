@@ -8,8 +8,8 @@
 
 #import "CHAppDelegate.h"
 #import "CHPageViewController.h"
-
 #import "CHSettingsViewController.h"
+#import "UIColor+DarkModeShim.h"
 
 
 @implementation CHAppDelegate
@@ -28,20 +28,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.window.rootViewController = [CHPageViewController new];
-    self.window.tintColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;
 }
 
 - (void)applyTheme {
-    [UILabel appearance].textColor                   = [UIColor whiteColor];
-    [UITableViewCell appearance].textLabel.textColor = [UIColor whiteColor];
-    [UITableViewCell appearance].backgroundColor     = [UIColor colorWithWhite:0.080 alpha:1.000];
-    [UITableView appearance].backgroundColor         = [UIColor blackColor];
-    [UITableView appearance].separatorColor          = [UIColor colorWithWhite:0.150 alpha:1.000];
+    [UILabel appearance].textColor                   = CHColor.primaryTextColor;
+    [UITableViewCell appearance].textLabel.textColor = CHColor.primaryTextColor;
+    [UITableViewCell appearance].backgroundColor     = CHColor.cellBackgroundColor;
+    [UITableView appearance].backgroundColor         = CHColor.primaryBackgroundColor;
+    [UITableView appearance].separatorColor          = CHColor.hairlineColor;
     // This is bad but I am lazy
-    [[NSClassFromString(@"_UITableViewHeaderFooterViewLabel") appearance] setTextColor:[UIColor colorWithWhite:1.000 alpha:0.6]];
+    [[NSClassFromString(@"_UITableViewHeaderFooterViewLabel") appearance] setTextColor:CHColor.secondaryTextColor];
 }
 
 @end

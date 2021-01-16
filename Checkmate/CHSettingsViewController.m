@@ -9,6 +9,7 @@
 #import "CHSettingsViewController.h"
 #import "CHPickerCell.h"
 #import "UIPickerView+SeparatorLines.h"
+#import "UIColor+DarkModeShim.h"
 #import "TBAlertController.h"
 #import <MessageUI/MessageUI.h>
 
@@ -73,18 +74,6 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 || indexPath.section == 2) {
-        // Dispatched because the picker views did not have their
-        // separator lines created at this point.
-        dispatch_async(dispatch_get_main_queue(), ^{
-            CHPickerCell *celll = (id)cell;
-            celll.picker.pickerView.bottomLineView_.backgroundColor = [UITableView appearance].separatorColor;
-            celll.picker.pickerView.topLineView_.backgroundColor    = [UITableView appearance].separatorColor;
-        });
-    }
-}
-
 #pragma mark UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,7 +88,7 @@
             break;
         }
         case 1: {
-            cell.textLabel.textColor = [UIColor whiteColor];
+            cell.textLabel.textColor = CHColor.primaryTextColor;
             cell.textLabel.font      = [cell.textLabel.font fontWithSize:17];
             if (indexPath.row == self.timerType) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -120,11 +109,12 @@
             // Obtain a reference to the delay picker
             _incrementPicker = pickerCell.picker;
             _incrementPicker.timeInterval = self.delayAmount;
+            
             break;
         }
         case 3: {
             cell.textLabel.text = @"Send feedback";
-            cell.textLabel.textColor = [UIColor colorWithRed:0.000 green:0.400 blue:1.000 alpha:1.000];
+            cell.textLabel.textColor = self.view.tintColor;
             cell.textLabel.font      = [cell.textLabel.font fontWithSize:17];
         }
     }

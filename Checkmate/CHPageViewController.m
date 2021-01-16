@@ -9,7 +9,7 @@
 #import "CHPageViewController.h"
 #import "CHCountdownViewController.h"
 #import "CHSettingsViewController.h"
-
+#import "UIColor+DarkModeShim.h"
 
 @interface CHPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 @property (nonatomic, readonly) CHCountdownViewController *timerViewController;
@@ -101,7 +101,7 @@
 - (void)presentSettingsNotification {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     label.text = @"Swipe to reveal settings";
-    label.textColor = [UIColor whiteColor];
+    label.textColor = CHColor.primaryTextColor;
     label.font = [UIFont systemFontOfSize:27 weight:UIFontWeightRegular];
     label.alpha = 0;
     [label sizeToFit];

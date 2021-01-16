@@ -8,6 +8,7 @@
 
 #import "CHTimerController.h"
 #import "CHTimerView.h"
+#import "UIColor+DarkModeShim.h"
 
 
 @interface CHTimerController () <CHTimerStateDelegate>
@@ -124,7 +125,7 @@
     // Only allow changing of this property if the timer has not started
     if (!self.hasStarted) {
         _totalTime = totalTime;
-        self.label.textColor = [UIColor whiteColor];
+        self.label.textColor = CHColor.primaryTextColor;
         [self displayTime:totalTime];
     }
 }
@@ -209,11 +210,11 @@
     self.timer         = nil;
     self.referenceDate = nil;
     self.timeSpent     = 0;
-    self.label.textColor = [UIColor whiteColor];
+    self.label.textColor = CHColor.primaryTextColor;
     
     [self displayTime:self.totalTime];
     
-    self.activeIndicatorLine.backgroundColor = [UIColor whiteColor];
+    self.activeIndicatorLine.backgroundColor = CHColor.primaryTextColor;
 }
 
 #pragma mark - Private interface
