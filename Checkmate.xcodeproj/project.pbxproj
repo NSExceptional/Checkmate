@@ -22,6 +22,7 @@
 		B4ED77C21C8560CB00CCC231 /* CHTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */; };
 		B4EE51031C89752E00BA0815 /* CHTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EE51021C89752E00BA0815 /* CHTimerController.m */; };
 		B4EEBA9E1C8266D800B414AC /* CHTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */; };
+		C39B68F725B3998500F8E32B /* UIColor+DarkModeShim.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B68F625B3998500F8E32B /* UIColor+DarkModeShim.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		B4EE51021C89752E00BA0815 /* CHTimerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerController.m; sourceTree = "<group>"; };
 		B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTimerLabel.h; sourceTree = "<group>"; };
 		B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTimerLabel.m; sourceTree = "<group>"; };
+		C39B68F525B3998500F8E32B /* UIColor+DarkModeShim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+DarkModeShim.h"; sourceTree = "<group>"; };
+		C39B68F625B3998500F8E32B /* UIColor+DarkModeShim.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DarkModeShim.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,26 +102,9 @@
 		B44ADEDD1C7D411C0038FBA7 /* Checkmate */ = {
 			isa = PBXGroup;
 			children = (
-				B44ADEE11C7D411C0038FBA7 /* CHAppDelegate.h */,
-				B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */,
-				B44ADEFB1C7D42F10038FBA7 /* CHPageViewController.h */,
-				B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */,
-				B44ADEFE1C7D43010038FBA7 /* CHCountdownViewController.h */,
-				B44ADEFF1C7D43010038FBA7 /* CHCountdownViewController.m */,
-				B4EE51011C89752E00BA0815 /* CHTimerController.h */,
-				B4EE51021C89752E00BA0815 /* CHTimerController.m */,
-				B428B4F51C82A357000E5569 /* CHTimerView.h */,
-				B428B4F61C82A357000E5569 /* CHTimerView.m */,
-				B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */,
-				B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */,
-				B44ADF011C7D43150038FBA7 /* CHSettingsViewController.h */,
-				B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */,
-				B44ADF081C7D59840038FBA7 /* CHPickerCell.h */,
-				B44ADF091C7D59840038FBA7 /* CHPickerCell.m */,
-				B44ADF111C7D74F70038FBA7 /* UIPickerView+SeparatorLines.h */,
-				B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */,
-				B4ED77C01C8560CB00CCC231 /* CHTimeIntervalPicker.h */,
-				B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */,
+				C39B68F225B3985F00F8E32B /* Views */,
+				C39B68F125B3985400F8E32B /* Controllers */,
+				C39B68F325B3986700F8E32B /* Categories */,
 				B44ADEDE1C7D411C0038FBA7 /* Supporting Files */,
 			);
 			path = Checkmate;
@@ -128,14 +114,57 @@
 			isa = PBXGroup;
 			children = (
 				B44ADEF01C7D411C0038FBA7 /* Assets.xcassets */,
-				B44ADEF51C7D411C0038FBA7 /* Info.plist */,
-				B44ADEDF1C7D411C0038FBA7 /* main.m */,
+				B44ADEE11C7D411C0038FBA7 /* CHAppDelegate.h */,
+				B44ADEE21C7D411C0038FBA7 /* CHAppDelegate.m */,
 				B44ADF0B1C7D5DC20038FBA7 /* Checkmate-Prefix.pch */,
 				B44ADF0C1C7D5DD50038FBA7 /* Checkmate-Constants.h */,
 				B44ADF0D1C7D5DD50038FBA7 /* Checkmate-Constants.m */,
 				B4AE61BC1C8574D0004BB75A /* Launch.xib */,
+				B44ADEF51C7D411C0038FBA7 /* Info.plist */,
+				B44ADEDF1C7D411C0038FBA7 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C39B68F125B3985400F8E32B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B44ADEFB1C7D42F10038FBA7 /* CHPageViewController.h */,
+				B44ADEFC1C7D42F10038FBA7 /* CHPageViewController.m */,
+				B44ADEFE1C7D43010038FBA7 /* CHCountdownViewController.h */,
+				B44ADEFF1C7D43010038FBA7 /* CHCountdownViewController.m */,
+				B4EE51011C89752E00BA0815 /* CHTimerController.h */,
+				B4EE51021C89752E00BA0815 /* CHTimerController.m */,
+				B44ADF011C7D43150038FBA7 /* CHSettingsViewController.h */,
+				B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C39B68F225B3985F00F8E32B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B428B4F51C82A357000E5569 /* CHTimerView.h */,
+				B428B4F61C82A357000E5569 /* CHTimerView.m */,
+				B4EEBA9C1C8266D800B414AC /* CHTimerLabel.h */,
+				B4EEBA9D1C8266D800B414AC /* CHTimerLabel.m */,
+				B44ADF081C7D59840038FBA7 /* CHPickerCell.h */,
+				B44ADF091C7D59840038FBA7 /* CHPickerCell.m */,
+				B4ED77C01C8560CB00CCC231 /* CHTimeIntervalPicker.h */,
+				B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C39B68F325B3986700F8E32B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B44ADF111C7D74F70038FBA7 /* UIPickerView+SeparatorLines.h */,
+				B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */,
+				C39B68F525B3998500F8E32B /* UIColor+DarkModeShim.h */,
+				C39B68F625B3998500F8E32B /* UIColor+DarkModeShim.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		E41A1C26E991BA284F4AC496 /* Pods */ = {
@@ -251,6 +280,7 @@
 				B4ED77C21C8560CB00CCC231 /* CHTimeIntervalPicker.m in Sources */,
 				B44ADEE01C7D411C0038FBA7 /* main.m in Sources */,
 				B44ADEFD1C7D42F10038FBA7 /* CHPageViewController.m in Sources */,
+				C39B68F725B3998500F8E32B /* UIColor+DarkModeShim.m in Sources */,
 				B44ADF131C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m in Sources */,
 				B428B4F71C82A357000E5569 /* CHTimerView.m in Sources */,
 				B44ADF001C7D43010038FBA7 /* CHCountdownViewController.m in Sources */,
