@@ -17,7 +17,6 @@
 		B44ADF031C7D43150038FBA7 /* CHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF021C7D43150038FBA7 /* CHSettingsViewController.m */; };
 		B44ADF0A1C7D59840038FBA7 /* CHPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF091C7D59840038FBA7 /* CHPickerCell.m */; };
 		B44ADF0E1C7D5DD50038FBA7 /* Checkmate-Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF0D1C7D5DD50038FBA7 /* Checkmate-Constants.m */; };
-		B44ADF101C7D5F0A0038FBA7 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B44ADF0F1C7D5F0A0038FBA7 /* Defaults.plist */; };
 		B44ADF131C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m in Sources */ = {isa = PBXBuildFile; fileRef = B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */; };
 		B4AE61BD1C8574D0004BB75A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AE61BC1C8574D0004BB75A /* Launch.xib */; };
 		B4ED77C21C8560CB00CCC231 /* CHTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B4ED77C11C8560CB00CCC231 /* CHTimeIntervalPicker.m */; };
@@ -48,7 +47,6 @@
 		B44ADF0B1C7D5DC20038FBA7 /* Checkmate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Checkmate-Prefix.pch"; sourceTree = "<group>"; };
 		B44ADF0C1C7D5DD50038FBA7 /* Checkmate-Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Checkmate-Constants.h"; sourceTree = "<group>"; };
 		B44ADF0D1C7D5DD50038FBA7 /* Checkmate-Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Checkmate-Constants.m"; sourceTree = "<group>"; };
-		B44ADF0F1C7D5F0A0038FBA7 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		B44ADF111C7D74F70038FBA7 /* UIPickerView+SeparatorLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+SeparatorLines.h"; sourceTree = "<group>"; };
 		B44ADF121C7D74F70038FBA7 /* UIPickerView+SeparatorLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+SeparatorLines.m"; sourceTree = "<group>"; };
 		B4AE61BC1C8574D0004BB75A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			children = (
 				B44ADEF01C7D411C0038FBA7 /* Assets.xcassets */,
 				B44ADEF51C7D411C0038FBA7 /* Info.plist */,
-				B44ADF0F1C7D5F0A0038FBA7 /* Defaults.plist */,
 				B44ADEDF1C7D411C0038FBA7 /* main.m */,
 				B44ADF0B1C7D5DC20038FBA7 /* Checkmate-Prefix.pch */,
 				B44ADF0C1C7D5DD50038FBA7 /* Checkmate-Constants.h */,
@@ -211,7 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B44ADEF11C7D411C0038FBA7 /* Assets.xcassets in Resources */,
-				B44ADF101C7D5F0A0038FBA7 /* Defaults.plist in Resources */,
 				B4AE61BD1C8574D0004BB75A /* Launch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

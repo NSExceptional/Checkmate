@@ -16,8 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Register default preferences
-    NSString *defaults = [[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:defaults]];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+        @"timer_time": @420, @"timer_increment": @5
+    }];
     
     [self applyTheme];
     
