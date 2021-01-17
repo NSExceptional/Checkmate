@@ -3,7 +3,7 @@
 //  Checkmate
 //
 //  Created by Tanner on 2/27/16.
-//  Copyright © 2016 Tanner Bennett. All rights reserved.
+//  Copyright © 2021 Tanner Bennett. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
