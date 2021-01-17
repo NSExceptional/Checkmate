@@ -3,7 +3,7 @@
 //  Checkmate
 //
 //  Created by Tanner on 2/23/16.
-//  Copyright © 2016 Tanner Bennett. All rights reserved.
+//  Copyright © 2021 Tanner Bennett. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,6 +14,8 @@
 
 //@property (nonatomic, readonly) UIView *bottomLineView_;
 //@property (nonatomic, readonly) UIView *topLineView_;
-@property (nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor;
+//@property (nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor;
+
+@property (nonatomic) UIColor *ch_lineColor;
 
 @end

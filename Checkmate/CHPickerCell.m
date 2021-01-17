@@ -43,7 +43,7 @@
     [super didMoveToSuperview];
     
     if (!@available(iOS 13.0, *)) {
-        _picker.pickerView.magnifierLineColor = CHColor.hairlineColor;
+        _picker.pickerView.ch_lineColor = CHColor.hairlineColor;
     }
 }
 
